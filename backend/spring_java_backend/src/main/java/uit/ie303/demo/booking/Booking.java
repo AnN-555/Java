@@ -13,7 +13,7 @@ public class Booking {
     @Id
     private Long Id;
 
-    private int customerid;
+    // private int customerid;
     private String checking_date;
     private String checkout_date;
     private int num_guess;

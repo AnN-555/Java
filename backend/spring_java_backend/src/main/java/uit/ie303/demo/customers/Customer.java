@@ -24,6 +24,8 @@ public class Customer {
         this.id = id;
     }
 
+    public Customer(){}
+
     // @OneToMany(mappedBy = "booking")
     // private List<Booking> booking;
 
