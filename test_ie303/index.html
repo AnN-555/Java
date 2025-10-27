@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test Spring Boot API</h1>
+
+    <div>
+        <input id="apiurl" placeholder="api url">
+        <button id="getAll">Get test data</button>
+    </div>
+
+    <pre id="output">Click a button to test the API...</pre>
+</body>
+
+</html>

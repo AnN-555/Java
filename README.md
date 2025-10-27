@@ -15,6 +15,8 @@ Chạy thử:
 - Lần đầu cài extension sẽ tốn thời gian để Maven tải các thư viện và build.
 - Ánh xạ database vào code sẽ tuân theo mô hình MVC giống như mẫu trong thư mục booking, customers, roomtype.
 - Mỗi bảng sẽ cần 3 file, riêng file Repository tạm thời chỉ cần copy interface qua và sửa tên.
+- Chạy thử trên chrome: nhập http://localhost:8080/api/booking
+- thay thế booking = customers hoặc tên được khai báo ở phía trên class chứa đối tượng từng bảng
 
 # End file
 ### Happy Coding ###

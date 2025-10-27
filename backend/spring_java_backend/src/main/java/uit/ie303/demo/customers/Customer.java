@@ -26,9 +26,6 @@ public class Customer {
 
     public Customer(){}
 
-    // @OneToMany(mappedBy = "booking")
-    // private List<Booking> booking;
-
     // Getters and Setters
     public Long getId() {
         return id;

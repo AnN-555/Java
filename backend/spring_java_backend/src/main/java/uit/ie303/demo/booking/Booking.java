@@ -13,7 +13,6 @@ public class Booking {
     @Id
     private Long Id;
 
-    // private int customerid;
     private String checking_date;
     private String checkout_date;
     private int num_guess;
@@ -26,7 +25,6 @@ public class Booking {
     private Customer customer_id;
 
     public Booking(Long id, String in_date, String out_date, int numOfGuess, double total, String requires, String bookStt){
-
         this.Id = id;
         this.checking_date = in_date;
         this.checkout_date = out_date;
