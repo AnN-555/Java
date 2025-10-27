@@ -1,34 +1,37 @@
 package uit.ie303.demo.customers;
 
+import java.util.List;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
+import uit.ie303.demo.booking.Booking;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "customers")
 public class Customer {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name, email, phone, address;
 
-    public Customer() {
-    }
-
-    public Customer(String name, String email, String phone, String address) {
+    public Customer(Long id, String name, String email, String phone, String address) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
+        this.id = id;
     }
 
+    // @OneToMany(mappedBy = "booking")
+    // private List<Booking> booking;
+
     // Getters and Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }   
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getName() {
