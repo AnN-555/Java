@@ -20,9 +20,9 @@ public class Booking {
     private String spec_request;
     private String booking_status;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer", referencedColumnName = "id", nullable = false)
+    private Customer customer;
 
     public Booking(Long id, String in_date, String out_date, int numOfGuess, double total, String requires, String bookStt){
         this.Id = id;

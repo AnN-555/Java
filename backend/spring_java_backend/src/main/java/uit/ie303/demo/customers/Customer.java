@@ -1,5 +1,6 @@
 package uit.ie303.demo.customers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.annotation.Generated;
@@ -25,6 +26,10 @@ public class Customer {
     }
 
     public Customer(){}
+
+    //
+    @OneToMany(mappedBy = "Id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
 
     // Getters and Setters
     public Long getId() {

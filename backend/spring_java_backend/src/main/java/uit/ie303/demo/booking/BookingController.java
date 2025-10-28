@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import uit.ie303.demo.customers.Customer;
-import uit.ie303.demo.customers.CustomerRepository;
-
-@CrossOrigin(origins = "http://127.0.0.1:3000") //allow access locally
+@CrossOrigin(origins = {"http://localhost:9090", "null"}) //allow access locally
 @RestController
 @RequestMapping("/api/booking")
 public class BookingController {
