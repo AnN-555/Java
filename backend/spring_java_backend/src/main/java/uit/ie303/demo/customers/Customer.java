@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GenerationType;
 import uit.ie303.demo.booking.Booking;
 import jakarta.persistence.*;
 
@@ -13,36 +11,38 @@ import jakarta.persistence.*;
 @Table(name = "customers")
 public class Customer {
     @Id
-    private Long id;
+    private Long customer_id;
 
-    private String name, email, phone, address;
+    private String customer_name, email, phone_number, address;
 
     public Customer(Long id, String name, String email, String phone, String address) {
-        this.name = name;
+        this.customer_name = name;
         this.email = email;
-        this.phone = phone;
+        this.phone_number = phone;
         this.address = address;
-        this.id = id;
+        this.customer_id = id;
     }
 
     public Customer(){}
 
-    //
-    @OneToMany(mappedBy = "Id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Booking> bookings = new ArrayList<>();
+    //booking 1 - n customers
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
+    private Booking booking_on_customer;
+
 
     // Getters and Setters
     public Long getId() {
-        return id;
+        return customer_id;
     }   
     public void setId(Long id) {
-        this.id = id;
+        this.customer_id = id;
     }
     public String getName() {
-        return name;
+        return customer_name;
     }
     public void setName(String name) {
-        this.name = name;
+        this.customer_name = name;
     }
     public String getEmail() {
         return email;
@@ -51,10 +51,10 @@ public class Customer {
         this.email = email;
     }
     public String getPhone() {
-        return phone;
+        return phone_number;
     }
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone_number = phone;
     }
     public String getAddress() {
         return address;
