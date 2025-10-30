@@ -36,9 +36,13 @@ public class Booking {
     public Booking(){}
 
     //booking 1 - n customers
-    @OneToMany(mappedBy = "booking_on_customer", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<Customer> customers_list;
+    // @OneToMany(mappedBy = "booking_on_customer", cascade = CascadeType.ALL)
+    // @JsonManagedReference
+    // private List<Customer> customers_list;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     
 

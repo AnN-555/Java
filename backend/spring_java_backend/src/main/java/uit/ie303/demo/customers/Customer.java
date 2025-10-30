@@ -11,6 +11,7 @@ import jakarta.persistence.*;
 @Table(name = "customers")
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customer_id;
 
     private String customer_name, email, phone_number, address;
@@ -26,9 +27,11 @@ public class Customer {
     public Customer(){}
 
     //booking 1 - n customers
-    @ManyToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private Booking booking_on_customer;
+    // @ManyToOne
+    // @JoinColumn(name = "booking_id", nullable = false)
+    // private Booking booking_on_customer;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
 
 
     // Getters and Setters
