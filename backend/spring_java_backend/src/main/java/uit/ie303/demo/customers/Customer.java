@@ -3,6 +3,8 @@ package uit.ie303.demo.customers;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.annotation.Generated;
 import uit.ie303.demo.booking.Booking;
 import jakarta.persistence.*;
@@ -14,7 +16,17 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customer_id;
 
-    private String customer_name, email, phone_number, address;
+    @JsonProperty("customer_name")
+    private String customer_name;
+
+    @JsonProperty("email")
+    String email;
+
+    @JsonProperty("phone_number")
+    String phone_number;
+
+    @JsonProperty("address")
+    String address;
 
     public Customer(Long id, String name, String email, String phone, String address) {
         this.customer_name = name;

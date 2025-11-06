@@ -1,7 +1,5 @@
 package uit.ie303.demo.email;
 
-import java.security.PublicKey;
-
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class MailConfig {

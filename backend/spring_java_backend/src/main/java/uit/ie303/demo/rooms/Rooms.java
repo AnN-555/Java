@@ -28,13 +28,12 @@ public class Rooms {
 
     // rooms 1 - n booking details
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonBackReference
     private List<BookingDetails> booking_details;
 
 
 
     // Getter & Setter
-
     public Long getRoom_id() {
         return room_id;
     }

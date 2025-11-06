@@ -1,6 +1,6 @@
 package uit.ie303.demo.bookingdetails;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 import uit.ie303.demo.booking.Booking;
@@ -19,6 +19,7 @@ public class BookingDetails {
     // rooms 1 -n booking details
     @ManyToOne
     @JoinColumn(name = "room_id", nullable = false)
+    @JsonManagedReference
     private Rooms room;
 
     // booking details 1 - 1 booking
