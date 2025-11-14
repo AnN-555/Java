@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
+// @CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
 @RestController
 @RequestMapping("/api/booking_details")
 public class BookingDetailsController {

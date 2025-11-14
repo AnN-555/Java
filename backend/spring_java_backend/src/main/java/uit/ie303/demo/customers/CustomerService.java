@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import io.micrometer.common.lang.NonNull;
-
 @Service
 public class CustomerService {
     private final CustomerRepository repository;
@@ -19,7 +17,8 @@ public class CustomerService {
         return this.repository.findAll();
     }
 
-    public Optional<Customer> getCustomerById(@NonNull Long id) {
+    public Optional<Customer> getCustomerById(Long id) {
+        if(null == id) return null;
         return this.repository.findById(id);
     }
 
@@ -34,6 +33,8 @@ public class CustomerService {
     }
 
     public Customer updateCustomer(Long id, Customer customerDetail) {
+        if(null == id) return null;
+        
         Customer customer = this.repository.findById(id).orElse(null);
 
         if (customer != null) {
@@ -41,7 +42,7 @@ public class CustomerService {
             customer.setPhone(customerDetail.getPhone());
             customer.setEmail(customerDetail.getEmail());
             customer.setName(customerDetail.getName());
-            customer.setId(customerDetail.getId());
+            // customer.setId(customerDetail.getId());
 
             return this.repository.save(customer);
         }
@@ -50,6 +51,7 @@ public class CustomerService {
     }
 
     public void deleteCustomer(Long id) {
+        if(null == id) return;
         repository.deleteById(id);
     }
 }

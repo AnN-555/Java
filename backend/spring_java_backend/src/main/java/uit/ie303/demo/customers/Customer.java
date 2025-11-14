@@ -23,7 +23,8 @@ public class Customer {
     String email;
 
     @JsonProperty("phone_number")
-    String phone_number;
+    @Column(name = "phone_number")
+    String phoneNumber;
 
     @JsonProperty("address")
     String address;
@@ -31,7 +32,7 @@ public class Customer {
     public Customer(Long id, String name, String email, String phone, String address) {
         this.customer_name = name;
         this.email = email;
-        this.phone_number = phone;
+        this.phoneNumber = phone;
         this.address = address;
         this.customer_id = id;
     }
@@ -66,10 +67,10 @@ public class Customer {
         this.email = email;
     }
     public String getPhone() {
-        return phone_number;
+        return phoneNumber;
     }
     public void setPhone(String phone) {
-        this.phone_number = phone;
+        this.phoneNumber = phone;
     }
     public String getAddress() {
         return address;

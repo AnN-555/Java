@@ -14,7 +14,10 @@ import uit.ie303.demo.roomtype.RoomType;
 public class Rooms {
     @Id
     private Long room_id;
-    private int room_number;
+
+    @Column(name = "room_number")
+    private int roomNumber;
+    
     // private int type_id;
     private String amenities;
     private String room_view;
@@ -43,11 +46,11 @@ public class Rooms {
     }
 
     public int getRoom_number() {
-        return room_number;
+        return roomNumber;
     }
 
     public void setRoom_number(int room_number) {
-        this.room_number = room_number;
+        this.roomNumber = room_number;
     }
 
     // public int getType_id() {

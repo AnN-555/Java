@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = {"http://localhost:9090", "null"}) //allow access locally
+// @CrossOrigin(origins = {"http://localhost:9090", "null"}) //allow access locally
 @RestController
 @RequestMapping("/api/booking")
 public class BookingController {

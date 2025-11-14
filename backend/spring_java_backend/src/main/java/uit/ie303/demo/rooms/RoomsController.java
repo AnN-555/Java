@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
+// @CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
 @RestController
 @RequestMapping("/api/rooms")
 public class RoomsController {
@@ -23,10 +23,11 @@ public class RoomsController {
     }
 
     @PostMapping
-    public Rooms createPayments(@RequestBody Rooms item) {
-        if (repository.existsById(item.getRoom_id())) {
-            throw new RuntimeException("Payment ID already exists");
-        }
+    public Rooms createRooms(@RequestBody Rooms item) {
+        // if (repository.existsById(item.getRoom_id())) {
+        //     throw new RuntimeException("Payment ID already exists");
+        // }
+        if(null == item) return null;
         return repository.save(item);
     }
 
@@ -34,5 +35,11 @@ public class RoomsController {
     public ResponseEntity<Rooms> getRoomsById(@PathVariable Long id){
         Rooms rooms = repository.findById(id).orElseThrow(()->new RuntimeException("Room not found"));
         return ResponseEntity.ok(rooms);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteRooms(Long id){
+        if(null == id ) return;
+        this.repository.deleteById(id);
     }
 }

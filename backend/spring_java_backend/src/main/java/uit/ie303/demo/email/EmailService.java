@@ -10,9 +10,15 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
+    private MailConfig mailConfig;
+
+    public EmailService(){
+        mailConfig = new MailConfig();
+    }
+
    public void sendMail(String to, String subject, String text){
     SimpleMailMessage message = new SimpleMailMessage();
-    message.setFrom("23540063@gm.uit.edu.vn");
+    message.setFrom(mailConfig.getUserName());
     message.setTo(to);
     message.setSubject(subject);
     message.setText(text);

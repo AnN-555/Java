@@ -10,9 +10,12 @@ public class EnvironmentCheckComponent {
     @Value("${MAIL_USERNAME}")
     private String mailUsername;
 
+    @Value("${DB_URL}")
+    private String tes_str;
+
     @PostConstruct
     public void checkEnvironmentVariables() {
         System.out.println("Check env");
-        System.out.println("MAIL_USERNAME read: " + mailUsername);
+        System.out.println("test string read: " + tes_str);
     }
 }
