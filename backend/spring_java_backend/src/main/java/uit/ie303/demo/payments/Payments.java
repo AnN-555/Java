@@ -17,7 +17,7 @@ public class Payments {
 
     // payments 1 -1 booking
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "booking", referencedColumnName = "booking_id")
+    @JoinColumn(name = "booking_id")
     private Booking booking;
 
     // Getter & Setter
