@@ -16,17 +16,17 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customer_id;
 
-    @JsonProperty("customer_name")
+    // @JsonProperty("customer_name")
     private String customer_name;
 
-    @JsonProperty("email")
+    // @JsonProperty("email")
     String email;
 
-    @JsonProperty("phone_number")
-    @Column(name = "phone_number")
+    // @JsonProperty("phone_number")
+    // @Column(name = "phone_number")
     String phoneNumber;
 
-    @JsonProperty("address")
+    // @JsonProperty("address")
     String address;
 
     public Customer(Long id, String name, String email, String phone, String address) {
@@ -39,11 +39,7 @@ public class Customer {
 
     public Customer(){}
 
-    //booking 1 - n customers
-    // @ManyToOne
-    // @JoinColumn(name = "booking_id", nullable = false)
-    // private Booking booking_on_customer;
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Booking> bookings = new ArrayList<>();
 
 

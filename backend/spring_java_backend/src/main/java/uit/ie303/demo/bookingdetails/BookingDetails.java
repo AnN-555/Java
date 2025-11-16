@@ -16,14 +16,16 @@ public class BookingDetails {
 
     public BookingDetails(){}
 
-    // rooms 1 -n booking details
+    // rooms n - 1 booking details
     @ManyToOne
     @JoinColumn(name = "room_id", nullable = false)
     @JsonManagedReference
     private Rooms room;
 
     // booking details 1 - 1 booking
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
+    @MapsId //use the same ID as booking
+    @JsonManagedReference
     @JoinColumn(name = "booking_id")
     private Booking booking;
 

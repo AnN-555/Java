@@ -42,6 +42,7 @@ public class CustomerService {
             customer.setPhone(customerDetail.getPhone());
             customer.setEmail(customerDetail.getEmail());
             customer.setName(customerDetail.getName());
+           
             // customer.setId(customerDetail.getId());
 
             return this.repository.save(customer);

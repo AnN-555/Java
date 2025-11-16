@@ -2,6 +2,7 @@ package uit.ie303.demo.booking;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
@@ -13,6 +14,7 @@ import uit.ie303.demo.customers.Customer;
 public class Booking {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long booking_id;
 
     private String checkin_date;
@@ -24,7 +26,7 @@ public class Booking {
 
     public Booking(Long id, String in_date, String out_date, int numOfGuess, double total, String requires,
             String bookStt) {
-        this.booking_id = id;
+        // this.booking_id = id;
         this.checkin_date = in_date;
         this.checkout_date = out_date;
         this.num_guests = numOfGuess;
@@ -33,20 +35,42 @@ public class Booking {
         this.booking_status = bookStt;
     }
 
+    public Booking(Booking booking){
+        this.booking_id = booking.getId();
+        this.checkin_date = booking.getChecking_date();
+        this.checkout_date = booking.getCheckout_date();
+        this.num_guests = booking.getNum_guess();
+        this.total_price = booking.getTotal_price();
+        this.special_request = booking.getSpec_request();
+        this.booking_status = booking.getBooking_status();
+    }
+
     public Booking(){}
 
-    //booking 1 - n customers
-    // @OneToMany(mappedBy = "booking_on_customer", cascade = CascadeType.ALL)
-    // @JsonManagedReference
-    // private List<Customer> customers_list;
-
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable = false)
+    @JsonIgnoreProperties({"bookings"}) // prevent infinite loop
     private Customer customer;
+
+    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
+    private BookingDetails details;
 
     
 
     //getter and setter
+
+    public Long getCustomerId(){
+        return customer.getId();
+    }
+
+    public Customer getCustomer(){
+        return this.customer;
+    }
+
+    public void setCustomer(Customer customer){
+        this.customer = customer;
+    }
+
     public Long getId() {
         return this.booking_id;
     }
