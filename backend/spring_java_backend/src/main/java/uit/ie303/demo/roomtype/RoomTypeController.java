@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// @CrossOrigin(origins = {"http://localhost:9090", "null"}) //allow access locally
 @RestController
 @RequestMapping("/api/roomtype")
 public class RoomTypeController {
@@ -29,24 +29,21 @@ public class RoomTypeController {
 
     @PostMapping
     public RoomType createRoomType(@RequestBody RoomType roomType) {
-        // if (service.existsById(roomType.getId())) {
-        //     throw new RuntimeException("RoomType ID already exists");
-        // }
         return service.createRoomType(roomType);
     }
 
     @GetMapping("/{id}")
-    public Optional<RoomType> getRoomTypeById(Long id){
+    public Optional<RoomType> getRoomTypeById(Long id) {
         return service.getRoomTypeById(id);
     }
 
     @PutMapping("/{id}")
-    public RoomType updateRoomType(Long id, RoomType tRoomType){
+    public RoomType updateRoomType(@PathVariable Long id, @RequestBody RoomType tRoomType) {
         return service.updateRoomType(id, tRoomType);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteRoomType(Long id){
+    public void deleteRoomType(@PathVariable Long id) {
         service.deleteRoomType(id);
     }
 }

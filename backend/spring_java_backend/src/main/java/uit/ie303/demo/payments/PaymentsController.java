@@ -48,16 +48,4 @@ public class PaymentsController {
         this.service.deletePayment(id);
     }
 
-    // @GetMapping
-    // public List<Payments> getAllPayments(){
-    //     return repository.findAll();
-    // }
-
-    // @PostMapping
-    // public Payments createPayments(@RequestBody Payments item){
-    //     if(repository.existsById(item.getPayment_id())){
-    //         throw new RuntimeException("Payment ID already exists");
-    //     }
-    //     return repository.save(item);
-    // }
 }

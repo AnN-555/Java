@@ -3,7 +3,10 @@ package uit.ie303.demo.rooms;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.*;
 import uit.ie303.demo.bookingdetails.BookingDetails;
@@ -24,15 +27,25 @@ public class Rooms {
     private String room_status;
 
     // room type 1 - n rooms
-    @ManyToOne
-    @JoinColumn(name = "type_id", nullable = false)
-    @JsonBackReference
-    private RoomType roomtype;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_id")
+    private RoomType roomType;
 
     // rooms 1 - n booking details
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     @JsonBackReference
     private List<BookingDetails> booking_details;
+
+
+    // get type_id solution 1
+    @Column(name = "type_id", insertable = false, updatable = false)
+    @JsonProperty("type_id")
+    private Integer typeId;
+
+    //get type_id solution 2
+    // @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "typeId")
+
+
 
 
 
@@ -52,14 +65,6 @@ public class Rooms {
     public void setRoom_number(int room_number) {
         this.roomNumber = room_number;
     }
-
-    // public int getType_id() {
-    //     return type_id;
-    // }
-
-    // public void setType_id(int type_id) {
-    //     this.type_id = type_id;
-    // }
 
     public String getAmenities() {
         return amenities;

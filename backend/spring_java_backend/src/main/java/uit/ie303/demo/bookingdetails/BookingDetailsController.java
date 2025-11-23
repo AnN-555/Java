@@ -1,39 +1,50 @@
 package uit.ie303.demo.bookingdetails;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-// @CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
 @RestController
 @RequestMapping("/api/booking_details")
 public class BookingDetailsController {
 
-    private final BookingDetailsRepositoy repository;
+    private final BookingDetailsService service;
 
-    public BookingDetailsController(BookingDetailsRepositoy repo) {
-        this.repository = repo;
+    public BookingDetailsController(BookingDetailsService service) {
+        this.service = service;
 
     }
 
     @GetMapping
     public List<BookingDetails> getAllBookingDetails() {
-        return repository.findAll();
+        return service.getAllBookingDetails();
     }
 
     @PostMapping
-    public BookingDetails createBookingDetails(@RequestBody BookingDetails item) {
-        if (repository.existsById(item.getBooking_detail_id())) {
-            throw new RuntimeException("Booking detail ID already exists");
+    public ResponseEntity<?> createBookingDetails(@RequestBody BookingDetails item) {
+        try {
+            BookingDetails details = service.createBookingDetails(item);
+            return ResponseEntity.ok(details);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
-        return repository.save(item);
+
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BookingDetails> getBookingDetailById(@PathVariable Long id){
+    public Optional<BookingDetails> getBookingDetailsById(@PathVariable Long id){
+        return service.getBookingDetailsById(id);
+    }
 
-        BookingDetails details = repository.findById(id).orElseThrow(() -> new RuntimeException("Booking detail not found"));
-        return ResponseEntity.ok(details);
+    @PutMapping("/{id}")
+    public BookingDetails updateBooking (@PathVariable Long id, @RequestBody BookingDetails booking){
+        return service.updateBookingDetails(id, booking);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBookingDetails(@PathVariable Long id){
+        service.deleteBookingDetails(id);
     }
 }

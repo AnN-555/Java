@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
 import uit.ie303.demo.bookingdetails.BookingDetails;
@@ -15,13 +16,24 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("booking_id")
     private Long booking_id;
 
+    @JsonProperty("checkin_date")
     private String checkin_date;
+
     private String checkout_date;
+
+    // @Column(name = "num_guests")
+    @JsonProperty("num_guests")
     private int num_guests;
+
     private double total_price;
+
+    // @Column(name = "special_request")
+    @JsonProperty("special_request")
     private String special_request;
+
     private String booking_status;
 
     public Booking(Long id, String in_date, String out_date, int numOfGuess, double total, String requires,
@@ -35,39 +47,43 @@ public class Booking {
         this.booking_status = bookStt;
     }
 
-    public Booking(Booking booking){
+    public Booking(Booking booking) {
         this.booking_id = booking.getId();
         this.checkin_date = booking.getChecking_date();
         this.checkout_date = booking.getCheckout_date();
         this.num_guests = booking.getNum_guess();
         this.total_price = booking.getTotal_price();
-        this.special_request = booking.getSpec_request();
+        this.special_request = booking.getSpecial_request();
         this.booking_status = booking.getBooking_status();
     }
 
-    public Booking(){}
+    public Booking() {
+    }
+
+    // Shadow FK field to expose customer_id
+    @Column(name = "customer_id", insertable = false, updatable = false)
+    @JsonProperty("customer_id")
+    private Long customerId;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    @JsonIgnoreProperties({"bookings"}) // prevent infinite loop
+    @JsonIgnoreProperties({ "bookings" }) // prevent infinite loop
     private Customer customer;
 
     @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
     private BookingDetails details;
 
-    
+    // getter and setter
 
-    //getter and setter
-
-    public Long getCustomerId(){
+    public Long getCustomerId() {
         return customer.getId();
     }
 
-    public Customer getCustomer(){
+    public Customer getCustomer() {
         return this.customer;
     }
 
-    public void setCustomer(Customer customer){
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
@@ -111,12 +127,12 @@ public class Booking {
         this.total_price = total_price;
     }
 
-    public String getSpec_request() {
+    public String getSpecial_request() {
         return special_request;
     }
 
-    public void setSpec_request(String spec_request) {
-        this.special_request = spec_request;
+    public void setSpecial_request(String special_request) {
+        this.special_request = special_request;
     }
 
     public String getBooking_status() {
