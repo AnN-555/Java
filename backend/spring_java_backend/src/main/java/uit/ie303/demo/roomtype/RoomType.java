@@ -22,8 +22,7 @@ public class RoomType {
     private String image_url;
 
     // roomtype 1 - n rooms
-    @OneToMany(mappedBy = "roomtype", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Rooms> rooms;
 
     // Getter and Setter

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uit.ie303.demo.email.EmailService;
 
-// @CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
 
 @RestController
 @RequestMapping("/api/customers")

@@ -1,17 +1,55 @@
 package uit.ie303.demo.bookingdetails;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
 
-import uit.ie303.demo.booking.BookingRepository;
-import uit.ie303.demo.booking.BookingService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class BookingDetailsService {
-    private final BookingRepository repository;
 
-    public BookingDetailsService(BookingRepository repository){
-        this.repository = repository;
+    private final BookingDetailsRepositoy repository;
+
+    public BookingDetailsService(BookingDetailsRepositoy repo) {
+        this.repository = repo;
+
     }
 
-    
+    public List<BookingDetails> getAllBookingDetails() {
+        return this.repository.findAll();
+    }
+
+    public Optional<BookingDetails> getBookingDetailsById(Long id) {
+        if (null == id)
+            return null;
+        return this.repository.findById(id);
+    }
+
+    public BookingDetails createBookingDetails(BookingDetails item) {
+
+        if (null == item)
+            return null; // null safety
+        return this.repository.save(item);
+    }
+
+    public BookingDetails updateBookingDetails(Long id, BookingDetails item) {
+        if (null == id)
+            return null;
+
+        BookingDetails mBookingDetails = this.repository.findById(id).orElse(null);
+
+        if (mBookingDetails != null) {
+            
+            return this.repository.save(mBookingDetails);
+        }
+
+        return null;
+    }
+
+    public void deleteBookingDetails(Long id) {
+        if (null == id)
+            return;
+        repository.deleteById(id);
+    }
+
 }

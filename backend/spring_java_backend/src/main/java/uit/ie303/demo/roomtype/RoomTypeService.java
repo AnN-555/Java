@@ -3,12 +3,22 @@ package uit.ie303.demo.roomtype;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import jakarta.mail.IllegalWriteException;
+import uit.ie303.demo.booking.BookingService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class RoomTypeService {
 
     private RoomTypeRepository repository;
+
+        // Create a logger for this class
+    private static final Logger logger = LoggerFactory.getLogger(RoomTypeService.class);
 
     public RoomTypeService(RoomTypeRepository repository) {
         this.repository = repository;
@@ -37,9 +47,14 @@ public class RoomTypeService {
         this.repository.deleteById(id);
     }
 
-    public RoomType updateRoomType(Long id, RoomType roomType) {
-        if (null == id)
-            return null;
+    public RoomType updateRoomType(Long id , RoomType roomType) {
+        if (null == id){
+            logger.atInfo().addArgument("id null");
+                 return null;
+        }
+
+        System.out.println(roomType.toString());
+            
 
         RoomType rRoomType = this.repository.findById(id).orElse(null);
 
@@ -47,7 +62,6 @@ public class RoomTypeService {
             rRoomType.setArea(roomType.getArea());
             rRoomType.setCapacity(roomType.getCapacity());
             rRoomType.setDescription(roomType.getDescription());
-            // rRoomType.setId(roomType.getId());
             rRoomType.setImgSrc(roomType.getImgSrc());
             rRoomType.setPrice(roomType.getPrice());
             rRoomType.setTypeName(roomType.getTypeName());

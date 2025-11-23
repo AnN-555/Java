@@ -1,5 +1,7 @@
 package uit.ie303.demo.payments;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import uit.ie303.demo.booking.Booking;
 
@@ -19,6 +21,11 @@ public class Payments {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "booking_id")
     private Booking booking;
+
+        // Shadow FK field to expose booking_id
+    @Column(name = "booking_id", insertable = false, updatable = false)
+    @JsonProperty("booking_id")
+    private Integer bookingId;
 
     // Getter & Setter
 

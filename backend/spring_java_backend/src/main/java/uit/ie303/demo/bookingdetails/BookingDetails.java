@@ -1,6 +1,7 @@
 package uit.ie303.demo.bookingdetails;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
 import uit.ie303.demo.booking.Booking;
@@ -9,12 +10,20 @@ import uit.ie303.demo.rooms.Rooms;
 @Entity
 @Table(name = "booking_details")
 public class BookingDetails {
-    @Id
-    private Long booking_detail_id;
-    // private int booking_id;
-    // private int room_id;
 
-    public BookingDetails(){}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "booking_detail_id")
+    @JsonProperty("booking_detail_id")
+    private Long bookingDetailId;
+
+    // @Column(name = "booking_id", nullable = false)
+    // @JsonProperty("booking_id")
+    // private Integer bookingId;
+
+    // @Column(name = "room_id", nullable = false)
+    // @JsonProperty("room_id")
+    // private Integer roomId;
 
     // rooms n - 1 booking details
     @ManyToOne
@@ -24,35 +33,33 @@ public class BookingDetails {
 
     // booking details 1 - 1 booking
     @OneToOne
-    @MapsId //use the same ID as booking
+    @MapsId // use the same ID as booking
     @JsonManagedReference
     @JoinColumn(name = "booking_id")
     private Booking booking;
 
-    // Getter & Setter
-
-    public Long getBooking_detail_id() {
-        return booking_detail_id;
+    // --- Getters and Setters ---
+    public Long getBookingDetailId() {
+        return bookingDetailId;
     }
 
-    public void setBooking_detail_id(Long booking_detail_id) {
-        this.booking_detail_id = booking_detail_id;
+    public void setBookingDetailId(Long bookingDetailId) {
+        this.bookingDetailId = bookingDetailId;
     }
 
-    // public int getBooking_id() {
-    // return this.booking_id;
+    // public Integer getBookingId() {
+    //     return bookingId;
     // }
 
-    // public void setBooking_id(int booking_id) {
-    // this.booking_id = booking_id;
+    // public void setBookingId(Integer bookingId) {
+    //     this.bookingId = bookingId;
     // }
 
-    // public int getRoom_id() {
-    // return room_id;
+    // public Integer getRoomId() {
+    //     return roomId;
     // }
 
-    // public void setRoom_id(int room_id) {
-    // this.room_id = room_id;
+    // public void setRoomId(Integer roomId) {
+    //     this.roomId = roomId;
     // }
-
 }

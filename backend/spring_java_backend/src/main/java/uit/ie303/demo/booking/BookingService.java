@@ -14,10 +14,6 @@ public class BookingService {
     private final BookingRepository repository;
     private final CustomerRepository customerRepository;
 
-    // public BookingService(BookingRepository repo) {
-    //     this.repository = repo;
-    // }
-
     public BookingService(BookingRepository repo, CustomerRepository customerRepository) {
         this.repository = repo;
         this.customerRepository = customerRepository;
@@ -58,7 +54,7 @@ public class BookingService {
             mBooking.setChecking_date(booking.getChecking_date());
             mBooking.setCheckout_date(booking.getCheckout_date());
             mBooking.setNum_guess(booking.getNum_guess());
-            mBooking.setSpec_request(booking.getSpec_request());
+            mBooking.setSpecial_request(booking.getSpecial_request());
             mBooking.setTotal_price(booking.getTotal_price());
             return this.repository.save(mBooking);
 
