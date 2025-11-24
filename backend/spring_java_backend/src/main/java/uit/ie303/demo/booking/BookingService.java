@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import uit.ie303.demo.customers.Customer;
 import uit.ie303.demo.customers.CustomerRepository;
-import uit.ie303.demo.dto.BookingRequest;
 
 @Service
 public class BookingService {

@@ -3,12 +3,8 @@ package uit.ie303.demo.rooms;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import uit.ie303.demo.roomtype.RoomType;
-
-// @CrossOrigin(origins = { "http://localhost:9090", "null" }) // allow access locally
 @RestController
 @RequestMapping("/api/rooms")
 public class RoomsController {
@@ -44,7 +40,7 @@ public class RoomsController {
     }
 
     @PutMapping("/{id}")
-    public Rooms updateRooms(@PathVariable Long id, @RequestBody Rooms rooms) {
-        return service.updateRooms(id, rooms);
+    public Rooms updateRooms(@RequestBody Rooms rooms) {
+        return service.updateRooms(rooms);
     }
 }

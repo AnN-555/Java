@@ -2,8 +2,6 @@ package uit.ie303.demo.roomtype;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.*;
 import uit.ie303.demo.rooms.Rooms;
 
@@ -21,9 +19,9 @@ public class RoomType {
     private double area;
     private String image_url;
 
-    // roomtype 1 - n rooms
-    @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Rooms> rooms;
+    // // roomtype 1 - n rooms
+    // @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    // private List<Rooms> rooms;
 
     // Getter and Setter
     public Long getId() {

@@ -14,7 +14,7 @@ public class Payments {
     private String payment_date;
     private String payment_method;
     private int amount;
-    private String payment_status = "Pending";
+    private String payment_status;
     private String transaction_code;
 
     // payments 1 -1 booking
@@ -22,10 +22,10 @@ public class Payments {
     @JoinColumn(name = "booking_id")
     private Booking booking;
 
-        // Shadow FK field to expose booking_id
+    // Shadow FK field to expose booking_id
     @Column(name = "booking_id", insertable = false, updatable = false)
     @JsonProperty("booking_id")
-    private Integer bookingId;
+    private Long bookingId;
 
     // Getter & Setter
 

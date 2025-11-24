@@ -3,11 +3,18 @@ package uit.ie303.demo.rooms;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import uit.ie303.demo.roomtype.RoomType;
+import uit.ie303.demo.roomtype.RoomTypeRepository;
 
 @Service
 public class RoomsService {
     private final RoomsRepository repository;
+
+    @Autowired
+    private RoomTypeRepository roomTypeRepository;
 
     public RoomsService(RoomsRepository repository) {
         this.repository = repository;
@@ -18,7 +25,8 @@ public class RoomsService {
     }
 
     public Optional<Rooms> getRoomsByid(Long id) {
-        if(null == id) return null;
+        if (null == id)
+            return null;
         return this.repository.findById(id);
     }
 
@@ -29,17 +37,20 @@ public class RoomsService {
         return this.repository.save(rooms);
     }
 
-    public Rooms updateRooms(Long id, Rooms rooms){
-        if(null == id) return null;
+    public Rooms updateRooms(Rooms rooms){
+        if(null == rooms.getRoom_id()) return null;
 
-        Rooms room = this.repository.findById(id).orElse(null);
+        Rooms room = this.repository.findById(rooms.getRoom_id()).orElse(null);
 
         if(null != room){
-            // room.setRoom_id(rooms.getRoom_id()  );
             room.setAmenities(rooms.getAmenities());
             room.setRoom_number(rooms.getRoom_number());
             room.setRoom_status(rooms.getRoom_status());
             room.setRoom_view(rooms.getRoom_view());
+
+            RoomType roomType = roomTypeRepository.findById(rooms.getTypeId()).orElse(null);
+
+            room.setRoomType(roomType);
 
             return this.repository.save(room);
         }
@@ -47,8 +58,9 @@ public class RoomsService {
         return null;
     }
 
-    public void deleteRoom(Long id){
-        if(null == id) return;
+    public void deleteRoom(Long id) {
+        if (null == id)
+            return;
         repository.deleteById(id);
     }
 

@@ -10,7 +10,7 @@ public class WebBackendDemoApplication {
 
 	public static void main(String[] args) {
 
-		// Tải biến từ file .env vào biến môi trường hệ thống
+		// load .env file from directory
         try {
             Dotenv dotenv = Dotenv.load();
             dotenv.entries().forEach(entry -> 
@@ -18,7 +18,7 @@ public class WebBackendDemoApplication {
             );
         } catch (Exception e) {
             System.out.println("Error get env file: " + e.getMessage());
-            // Có thể bỏ qua nếu file .env không bắt buộc (ví dụ: trên Production)
+            // Skip .env if no neccessary (ex: production)
         }
 
 
