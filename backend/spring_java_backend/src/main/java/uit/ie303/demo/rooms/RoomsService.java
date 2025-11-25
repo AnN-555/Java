@@ -34,6 +34,10 @@ public class RoomsService {
         if (this.repository.existsByRoomNumber(rooms.getRoom_number())) {
             throw new IllegalArgumentException("Room number already exists");
         }
+
+        // RoomType type = roomTypeRepository.findById(rooms.getTypeId()).orElse(null);
+        // rooms.setRoomType(type);
+
         return this.repository.save(rooms);
     }
 
@@ -47,10 +51,11 @@ public class RoomsService {
             room.setRoom_number(rooms.getRoom_number());
             room.setRoom_status(rooms.getRoom_status());
             room.setRoom_view(rooms.getRoom_view());
+            room.setType_id(rooms.getType_id());
 
-            RoomType roomType = roomTypeRepository.findById(rooms.getTypeId()).orElse(null);
+            // RoomType roomType = roomTypeRepository.findById(rooms.getTypeId()).orElse(null);
 
-            room.setRoomType(roomType);
+            // room.setRoomType(roomType);
 
             return this.repository.save(room);
         }

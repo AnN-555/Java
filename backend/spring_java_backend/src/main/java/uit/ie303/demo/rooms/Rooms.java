@@ -20,28 +20,19 @@ public class Rooms {
     private String amenities;
     private String room_view;
     private String room_status;
+    private Long type_id;
 
-    @ManyToOne
-    @JoinColumn(name = "type_id", nullable = false)
-    @JsonIgnore // hide full object
-    private RoomType roomType;
+    // @ManyToOne
+    // @JoinColumn(name = "type_id", nullable = false, insertable = true, updatable = true)
+    // @JsonIgnore // hide full object
+    // private RoomType roomType;
 
     public Rooms() {
 
     }
 
-    @JsonProperty("type_id")
-    public Long getTypeId() {
-        return roomType != null ? roomType.getId() : null;
-    }
-
-    public RoomType getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
-    }
+    public Long getType_id(){return this.type_id;}
+    public void setType_id(Long id){ this.type_id = id;}
 
     public Long getRoom_id() {
         return this.room_id;
@@ -50,10 +41,6 @@ public class Rooms {
     public Integer getRoom_number() {
         return this.roomNumber;
     }
-
-    // public Long getType_id() {
-    // return this.type_id;
-    // }
 
     public String getAmenities() {
         return this.amenities;
@@ -66,10 +53,6 @@ public class Rooms {
     public String getRoom_view() {
         return this.room_view;
     }
-
-    // public void setType_id(Long id){
-    // this.type_id = id;
-    // }
 
     public void setAmenities(String item) {
         this.amenities = item;

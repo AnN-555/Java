@@ -40,6 +40,11 @@ public class RoomsController {
     }
 
     @PutMapping("/{id}")
+    public Rooms updateRoomsById(@RequestBody Rooms rooms) {
+        return service.updateRooms(rooms);
+    }
+
+    @PutMapping
     public Rooms updateRooms(@RequestBody Rooms rooms) {
         return service.updateRooms(rooms);
     }
