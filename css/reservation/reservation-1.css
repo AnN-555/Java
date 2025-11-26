@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font-face */
+.old-standard-tt {
+    font-family: 'Old Standard TT', serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #212322;
+    scroll-behavior: smooth;
+}
+
+
+.available-form {
+    margin: 40px auto;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.available-form > ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Check-in and Check-out fields */
+.field-checkin,
+.field-checkout {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    position: relative;
+}
+
+.field-checkin label,
+.field-checkout label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-checkin label span,
+.field-checkout label span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212322;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-checkin label.date,
+.field-checkout label.date {
+    position: relative;
+}
+
+.field-checkin input.text,
+.field-checkout input.text {
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.field-checkin input.text:focus,
+.field-checkout input.text:focus {
+    border-color: #c9a961;
+}
+
+.field-checkin label.date i,
+.field-checkout label.date i {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.calendar-icon {
+    cursor: pointer;
+}
+
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.calendar-popup input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.calendar-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #212322;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.calendar-popup button:hover {
+    background-color: #b8964f;
+}
+
+/* Rooms field */
+.select-rooms {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+    padding-left: 100px;
+}
+
+.select-rooms span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212322;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.select-rooms select {
+    padding: 12px 35px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.select-rooms select:focus {
+    border-color: #c9a961;
+}
+
+/* Pax field (Adults and Children) */
+.field-pax {
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+    gap: 20px;
+}
+
+.field-pax > ol {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+}
+
+.field-pax > ol > li {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-pax label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-pax label span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-pax select {
+    padding: 12px 35px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.field-pax select:focus {
+    border-color: #C6AA76;
+}
+
+/* Search Button */
+.search-button {
+    background-color: #212322;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    margin-top: 28px;
+    min-width: 150px;
+    justify-content: center;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+.search-button:hover {
+    background-color: #b8964f;
+}
+
+.search-button .icon {
+    display: flex;
+    align-items: center;
+}
+
+.search-button .icon i {
+    font-size: 1rem;
+}
+
+.search-button .text {
+    font-weight: 600;
+}
+
+
+/* Khung bao ngoài của lịch */
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #c9a961;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 10px;
+    user-select: none;
+}
+
+.calendar-popup.active {
+    display: block;
+}
+
+/* Header của lịch */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Phần chữ Tháng/Năm ở giữa */
+.calendar-month-year {
+    flex: 1; 
+    font-weight: bold;
+    font-size: 1rem;
+    color: #212322;
+    text-align: center;
+}
+
+/* Nút mũi tên */
+.calendar-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #212322;
+    padding: 0 5px;
+    font-weight: bold;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px; 
+}
+
+.calendar-header button:hover {
+    color: #c9a961;
+    background-color: transparent; 
+}
+
+/* Lưới hiển thị ngày */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+/* Tên thứ */
+.calendar-day-name {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Các ô ngày */
+.calendar-day {
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-day.selected {
+    background-color: #212322;
+    color: #c9a961;
+    font-weight: bold;
+}
+
+.calendar-day.today {
+    border: 1px solid #c9a961;
+    color: #c9a961;
+}
+
+.calendar-day.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+/* --- BỔ SUNG STYLE CHO BẢNG KẾT QUẢ --- */
+
+.room-box {
+    width: 100%;
+    max-width: 1200px; /* Giới hạn chiều rộng bảng */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.room-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Header bảng */
+.room-table thead th {
+    background-color: #212322;
+    color: #c9a961;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: left;
+    border-bottom: 3px solid #c9a961;
+}
+
+/* Các dòng dữ liệu */
+.room-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.room-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.room-table td {
+    padding: 20px;
+    vertical-align: middle;
+}
+
+/* Cột hình ảnh */
+.col-img img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Cột chi tiết */
+.col-detail h3 {
+    color: #212322;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+}
+
+.col-detail p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Cột ngày */
+.col-date p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+/* Cột tổng tiền */
+.col-total .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #c9a961;
+}
+
+/* Cột nút bấm */
+.col-action {
+    text-align: center;
+}
+
+.btn-book-now {
+    display: inline-block;
+    background-color: #c9a961;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-book-now:hover {
+    background-color: #212322;
+    color: #c9a961;
+}
+.room-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.room-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

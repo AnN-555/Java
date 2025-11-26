@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Reservation API</title>
+</head>
+<body>
+    <h2>Test Reservation Search API</h2>
+
+    <label>Check-in: <input type="date" id="checkin"></label><br><br>
+    <label>Check-out: <input type="date" id="checkout"></label><br><br>
+    <label>Rooms: <input type="number" id="rooms" value="1" min="1"></label><br><br>
+    <label>Adults: <input type="number" id="adults" value="2" min="1"></label><br><br>
+    <label>Children: <input type="number" id="children" value="0" min="0"></label><br><br>
+
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.addEventListener('click', () => {
+            const requestData = {
+                checkIn: document.getElementById('checkin').value,
+                checkOut: document.getElementById('checkout').value,
+                rooms: document.getElementById('rooms').value,
+                adults: parseInt(document.getElementById('adults').value),
+                children: parseInt(document.getElementById('children').value)
+            };
+
+            console.log("Sending JSON:", requestData);
+
+            fetch('http://localhost:8080/api/reservation/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from backend:", data);
+                alert("Check console for response");
+            })
+            .catch(err => console.error("Error:", err));
+        });
+    </script>
+</body>
+</html>
