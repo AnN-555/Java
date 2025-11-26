@@ -1,9 +1,11 @@
 package uit.ie303.demo.controller;
 
+import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +16,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import uit.ie303.demo.email.EmailService;
 import uit.ie303.demo.model.Booking;
-import uit.ie303.demo.model.BookingDetails;
 import uit.ie303.demo.model.Customer;
+import uit.ie303.demo.model.Rooms;
 import uit.ie303.demo.service.BookingService;
 import uit.ie303.demo.service.CustomerService;
+import uit.ie303.demo.service.RoomsService;
 
 @RestController
 @RequestMapping("/api/booking")
@@ -35,6 +40,9 @@ public class BookingController {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private RoomsService roomsService;
 
     @PostMapping
     public ResponseEntity<Booking> create(@RequestBody Booking item) {
@@ -50,9 +58,19 @@ public class BookingController {
             item.setCustomer(mCustomer.get());
         }
 
-        
-        emailService.sendMail(mCustomer.get().getEmail(), "Hotel Diamon - Booking Confirmed", "Dear " + mCustomer.get().getCustomerName() + " , your booking is placed.");
+        emailService.sendMail(mCustomer.get().getEmail(), "Hotel Diamon - Booking Confirmed",
+                "Dear " + mCustomer.get().getCustomerName() + " , your booking is placed.");
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(item));
+    }
+
+    @PostMapping("/available")
+    public ResponseEntity<List<Rooms>> getAvailableRooms(@RequestBody Map<String, String> payload) {
+        LocalDateTime checkin = LocalDateTime.parse(payload.get("checkinDate"));
+        LocalDateTime checkout = LocalDateTime.parse(payload.get("checkoutDate"));
+        int requestedRoomType = Integer.parseInt(payload.get("requestedRoomType"));
+
+        List<Rooms> rooms = this.service.getAvailableRooms(checkin, checkout, requestedRoomType);
+        return ResponseEntity.ok(rooms);
     }
 
     @GetMapping

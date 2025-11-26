@@ -1,6 +1,5 @@
 package uit.ie303.demo.controller;
 
-import java.lang.foreign.Linker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import uit.ie303.demo.model.Booking;
 import uit.ie303.demo.model.BookingDetails;
-import uit.ie303.demo.model.Customer;
 import uit.ie303.demo.model.Rooms;
 import uit.ie303.demo.service.BookingDetailsService;
 import uit.ie303.demo.service.BookingService;

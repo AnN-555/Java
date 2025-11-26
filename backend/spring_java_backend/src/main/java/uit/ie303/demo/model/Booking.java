@@ -2,12 +2,6 @@ package uit.ie303.demo.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -31,6 +25,7 @@ public class Booking {
     private String bookingStatus = "Pending";
 
     /* getter and setter */
+
     public Long getId() {
         return id;
     }
