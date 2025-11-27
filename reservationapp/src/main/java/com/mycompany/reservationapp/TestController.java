@@ -1,5 +1,6 @@
 package com.mycompany.reservationapp;
 
+import com.mycompany.reservationapp.dto.InformationCustomer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.mycompany.reservationapp.dto.ReservationRequest;
@@ -48,5 +49,25 @@ public class TestController {
     public ResponseEntity<?> getAvailableRooms() {
         RoomService service = new RoomService();
         return ResponseEntity.ok(service.getAvailableRooms());
+    }
+
+
+
+
+    @PostMapping("/InformationCustomer")
+    public ResponseEntity<?> createInformationCustomer(@RequestBody InformationCustomer temp) {
+        System.out.println("=== RECEIVED TEMP RESERVATION ===");
+        System.out.println("Room ID   : " + temp.getRoomId());
+        System.out.println("Check-in  : " + temp.getCheckIn());
+        System.out.println("Check-out : " + temp.getCheckOut());
+        System.out.println("Customer  : " + temp.getCustomer().getFirstName() + " " + temp.getCustomer().getLastName());
+        System.out.println("Phone     : " + temp.getCustomer().getPhone());
+        System.out.println("Email     : " + temp.getCustomer().getEmail());
+        System.out.println("Country   : " + temp.getCustomer().getCountry());
+
+        // Lưu tạm, tạo tempId
+        String tempId = "TEMP" + System.currentTimeMillis();
+
+        return ResponseEntity.ok(Map.of("tempId", tempId));
     }
 }

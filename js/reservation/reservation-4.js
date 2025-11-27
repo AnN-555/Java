@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const serviceFee = localStorage.getItem("stay_serviceFee") || "250,000 VND";
   const total = localStorage.getItem("stay_total") || "5,750,000 VND";
 
+
   const details = document.querySelectorAll(".stay_box .stay-box-detail");
   if (details[0])
     details[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" alt="" style="height: 20px"> ${location}`;
@@ -124,18 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
       errorDiv.scrollIntoView({ behavior: "smooth" });
       return;
     }
-    let titleText = "";
-    if (titleChecked) {
-      titleText =
-        titleChecked.value ||
-        (titleChecked.nextElementSibling?.textContent || "").trim();
-    }
-    localStorage.setItem("user_title", titleText || "Mr");
-    localStorage.setItem("user_firstName", firstName.value.trim());
-    localStorage.setItem("user_lastName", lastName.value.trim());
-    localStorage.setItem("user_phone", phone.value.trim());
-    localStorage.setItem("user_email", email.value.trim());
 
+    // ======= Gửi dữ liệu khách hàng + thông tin phòng xuống backend =======
+    const titleText =
+      titleChecked.value ||
+      (titleChecked.nextElementSibling?.textContent || "").trim();
     const selects = document.querySelectorAll(
       ".input-row .input-group select, .input-group select"
     );
@@ -153,10 +147,42 @@ document.addEventListener("DOMContentLoaded", function () {
       country =
         (found ? found.value : selects[selects.length - 1].value) || "Vietnam";
     }
-    localStorage.setItem("user_country", country);
-    localStorage.setItem("stay_dates", datesText);
-    window.location.href = "./reservation-page-5.html";
+
+    const tempBooking = {
+      roomId: roomId,
+      checkIn: checkinRaw,
+      checkOut: checkoutRaw,
+      customer: {
+        title: titleText,
+        firstName: firstName.value.trim(),
+        lastName: lastName.value.trim(),
+        phone: phone.value.trim(),
+        email: email.value.trim(),
+        country: country
+      }
+    };
+
+    fetch("http://localhost:8080/api/reservation/InformationCustomer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(tempBooking)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // data.tempId được backend trả về
+        const tempId = data.tempId;
+        if (!tempId) throw new Error("No tempId returned from backend");
+
+        // Chuyển sang trang 3 kèm tempId
+        window.location.href = `./reservation-page-5.html?tempId=${tempId}`;
+      })
+      .catch((err) => {
+        errorDiv.textContent =
+          "Error saving customer info, please try again later.";
+        console.error(err);
+      });
   });
+
   const navTop = document.getElementById("top-page");
   if (navTop) {
     navTop.addEventListener("click", function () {
