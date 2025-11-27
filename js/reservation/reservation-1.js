@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendarIcons = document.querySelectorAll('.field-checkin .fa-calendar, .field-checkout .fa-calendar');
     const searchBtn = document.querySelector('.search-button');
     const roomBox = document.querySelector('.room-box');
+    
 
     // ======= Date utils =======
     const formatIsoDate = (date) => {
@@ -195,6 +196,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="book-btn">Book Now</button>
             `;
             roomBox.appendChild(card);
+
+            // ======= Lưu tạm thông tin vào localStorage =======
+            const bookBtn = card.querySelector('.book-btn');
+            bookBtn.addEventListener('click', () => {
+                const roomsVal = document.getElementById('select-rooms').value;
+                const adultsVal = document.getElementById('select-adults').value;
+                const childrenVal = document.getElementById('select-children').value;
+
+                localStorage.setItem('stay_roomName', room.typeName);
+                localStorage.setItem('stay_roomImage', room.image);
+                localStorage.setItem('stay_roomView', room.roomView);
+                localStorage.setItem('stay_price', room.price);
+                localStorage.setItem('checkinDate', checkIn);
+                localStorage.setItem('checkoutDate', checkOut);
+                localStorage.setItem('stay_nights', nights);
+                localStorage.setItem('stay_rooms', roomsVal);
+                localStorage.setItem('stay_adults', adultsVal);
+                localStorage.setItem('stay_children', childrenVal);
+                localStorage.setItem('stay_guests', `${roomsVal} Room(s) - ${parseInt(adultsVal)+parseInt(childrenVal)} Guests`);
+
+                window.location.href = './reservation-page-4.html';
+            });
         });
     };
 

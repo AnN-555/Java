@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tax = localStorage.getItem("stay_tax") || "500,000 VND";
   const serviceFee = localStorage.getItem("stay_serviceFee") || "250,000 VND";
   const total = localStorage.getItem("stay_total") || "5,750,000 VND";
-
+  const roomId = localStorage.getItem("stay_roomId") || "101"; // Lấy ID phòng nếu có
 
   const details = document.querySelectorAll(".stay_box .stay-box-detail");
   if (details[0])
