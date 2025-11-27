@@ -23,6 +23,11 @@ public class BookingDetails {
     private Rooms room;
 
     /* getter and setter */
+
+    public Long getRoomId(){
+        return this.room.getId();
+    }
+
     public Long getId() {
         return id;
     }

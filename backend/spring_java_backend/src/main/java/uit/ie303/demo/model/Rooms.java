@@ -23,6 +23,11 @@ public class Rooms {
     private String roomStatus;
 
     /* getter and setter */
+
+    public Long getRoomTypeId(){
+        return this.roomType.getId();
+    }
+
     public Long getId() {
         return id;
     }

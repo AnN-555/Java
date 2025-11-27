@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+h1 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5vw;
+}
+h2 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-size: clamp(0.68rem, 2.5vw, 1.35rem);
+}
+.language-selection {
+  text-align: right;
+  font-size: 1em;
+  display: block;
+}
+nav.top-page {
+  text-align: center;
+  text-decoration: none;
+  background-image: url("../../images/homepage/home_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  background-color: #ebe3d7;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 5vw;
+}
+.language-style {
+  background: transparent;
+  border: 0;
+}
+.detail__select {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 7vh;
+  margin-bottom: 10vh;
+}
+.room {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3vw;
+  max-width: 53vw;
+  /* max-height: 25vh; */
+}
+.room__image > img {
+  max-height: 25vh;
+  max-width: 17vw;
+}
+.room__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.room__detail > p {
+  padding-right: 10vw;
+  font-size: clamp(0.6rem, 2.4vw, 1rem);
+}
+.room__detail__booking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.room__detail__booking__price {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: end;
+}
+.room__detail__booking__price > p {
+  font-family: "Old Standard TT", serif;
+  font-size: clamp(1rem, 3vw, 1.8rem);
+}
+.room__detail__booking__price > button {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  width: 10vw;
+  height: 5vh;
+  text-align: center;
+  border: 1px solid #212322;
+  border-radius: 0.5vh;
+  background: transparent;
+  font-size: clamp(0.5rem, 2.2vw, 0.8rem);
+}
+.phase ul {
+  color: black;
+  list-style: none;
+  font-size: clamp(0.6rem, 2.8vw, 1.11rem);
+  text-decoration: underline;
+  display: flex;
+  background-color: #faf8f5;
+  justify-content: center;
+  height: 5vh;
+  align-items: center;
+  gap: 1vw;
+}
+.upcoming__phase {
+  opacity: 0.5;
+}
+.phase li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+.phase li:nth-child(even) {
+  width: 40px;
+  height: 1px;
+  background-color: #cdcfce;
+}
+.room-type {
+  font-weight: bold;
+  font-size: 2em;
+}
+.room__detail__booking__price button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.room__detail__booking__price button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px #fff;
+  background-color: #ebe3d7;
+}
+@media (max-width: 500px) {
+  .phase ul li {
+    display: none;
+  }
+  .phase ul li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+/*font family*/
+.old-standard-tt {
+  font-family: "Old Standard TT", serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.roboto-standard {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
