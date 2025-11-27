@@ -174,27 +174,45 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCheckoutDate();
     }
 
-    // ======= Render room cards =======
+// ======= Render room cards =======
     const renderRooms = (rooms, checkIn, checkOut, nights) => {
         roomBox.innerHTML = ''; // Xóa card cũ
         if(!rooms || rooms.length === 0){
             roomBox.innerHTML = `<p>No rooms available for selected dates.</p>`;
             return;
         }
-
+        roomBox.innerHTML = `
+            <div class= "title-room">
+                <h3>Room Type</h3>
+                <h3>Detail</h3>
+                <h3>Checkin</h3>
+                <h3>Checkout</h3>
+                <h3 class="n">Nights</h3>
+                <h3>Total</h3>
+            </div>`;
         rooms.forEach(room => {
+
+            
             const card = document.createElement('div');
             card.classList.add('room-card');
             card.innerHTML = `
-                <h3>${room.typeName}</h3>
-                <p>View: ${room.roomView}</p>
-                <p>Price: $${room.price} / night</p>
-                <p>image: ${room.image}</p>
-                <p>Check-in: ${checkIn}</p>
-                <p>Check-out: ${checkOut}</p>
-                <p>Nights: ${nights}</p>
-                <button class="book-btn">Book Now</button>
-            `;
+                <ul class = "list-title">
+                    <li>
+                        <div class="name-room">
+                            <h3>${room.typeName}</h3>
+                            <img src="${room.image}">
+                        </div>
+                        <p>${room.roomView}</p>
+                        <p>${checkIn}</p>
+                        <p class="l3">${checkOut}</p>
+                        <p>${nights}</p>
+                        <div class = "pay">
+                            <p>$${room.price} / night</p>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </li>
+                </ul>`;
+
             roomBox.appendChild(card);
 
             // ======= Lưu tạm thông tin vào localStorage =======
