@@ -73,6 +73,21 @@
       // Show modal when button clicked
       btn.onclick = function () {
         modal.style.display = "block";
+
+        // Call backend EmailController
+        fetch(
+          "http://localhost:8080/api/email/send?to=test@example.com&subject=Hello&text=This+is+a+test",
+          {
+            method: "POST",
+          }
+        )
+          .then((response) => response.text())
+          .then((data) => {
+            alert("Backend says: " + data); // shows "Email sent successfully!"
+          })
+          .catch((error) => {
+            alert("Error sending email: " + error);
+          });
       };
 
       // Close modal when X clicked
