@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${room.typeName}</h3>
                 <p>View: ${room.roomView}</p>
                 <p>Price: $${room.price} / night</p>
+                <p>image: ${room.image}</p>
                 <p>Check-in: ${checkIn}</p>
                 <p>Check-out: ${checkOut}</p>
                 <p>Nights: ${nights}</p>
