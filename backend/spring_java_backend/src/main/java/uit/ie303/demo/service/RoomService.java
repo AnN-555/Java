@@ -1,4 +1,4 @@
-package com.mycompany.reservationapp.service;
+package uit.ie303.demo.service;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mycompany.reservationapp.dto.RoomDTO;
+import uit.ie303.demo.model.RoomDTO;
 
 public class RoomService {
 
