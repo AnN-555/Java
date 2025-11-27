@@ -11,7 +11,7 @@ public class RoomService {
 
     private final String url = "jdbc:sqlserver://localhost:1433;databaseName=diamondhotel;encrypt=false;trustServerCertificate=true;";
     private final String user = "sa";
-    private final String password = "reality45789";
+    private final String password = "123456";
 
 
     public List<RoomDTO> getAvailableRooms(LocalDate checkIn, LocalDate checkOut) {
