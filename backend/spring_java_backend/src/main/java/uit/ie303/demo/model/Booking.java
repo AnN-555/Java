@@ -1,93 +1,51 @@
 package uit.ie303.demo.model;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import jakarta.persistence.*;
+import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "booking")
 public class Booking {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "booking_id")
-    private Long id;
+    private Long bookingId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    private LocalDateTime checkinDate;
-    private LocalDateTime checkoutDate;
-    private Integer numGuests;
-    private BigDecimal totalPrice;
+    private LocalDate checkinDate;
+    private LocalDate checkoutDate;
+
+    private int numGuests;
+    private double totalPrice;
+
     private String specialRequest;
-    private String bookingStatus = "Pending";
 
-    /* getter and setter */
+    private String bookingStatus;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public LocalDateTime getCheckinDate() {
-        return checkinDate;
-    }
-
-    public void setCheckinDate(LocalDateTime checkinDate) {
-        this.checkinDate = checkinDate;
-    }
-
-    public LocalDateTime getCheckoutDate() {
-        return checkoutDate;
-    }
-
-    public void setCheckoutDate(LocalDateTime checkoutDate) {
-        this.checkoutDate = checkoutDate;
-    }
-
-    public Integer getNumGuests() {
-        return numGuests;
-    }
-
-    public void setNumGuests(Integer numGuests) {
-        this.numGuests = numGuests;
-    }
-
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getSpecialRequest() {
-        return specialRequest;
-    }
-
-    public void setSpecialRequest(String specialRequest) {
-        this.specialRequest = specialRequest;
-    }
-
-    public String getBookingStatus() {
-        return bookingStatus;
-    }
-
-    public void setBookingStatus(String bookingStatus) {
-        this.bookingStatus = bookingStatus;
-    }
-
+    // Getters & Setters
+    public Long getBookingId() { return bookingId; }
+    public void setBookingId(Long bookingId) { this.bookingId = bookingId; }
+    public Customer getCustomer() { return customer; }
+    public void setCustomer(Customer customer) { this.customer = customer; }
+    public LocalDate getCheckinDate() { return checkinDate; }
+    public void setCheckinDate(LocalDate checkinDate) { this.checkinDate = checkinDate; }
+    public LocalDate getCheckoutDate() { return checkoutDate; }
+    public void setCheckoutDate(LocalDate checkoutDate) { this.checkoutDate = checkoutDate; }
+    public int getNumGuests() { return numGuests; }
+    public void setNumGuests(int numGuests) { this.numGuests = numGuests; }
+    public double getTotalPrice() { return totalPrice; }
+    public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
+    public String getSpecialRequest() { return specialRequest; }
+    public void setSpecialRequest(String specialRequest) { this.specialRequest = specialRequest; }
+    public String getBookingStatus() { return bookingStatus; }
+    public void setBookingStatus(String bookingStatus) { this.bookingStatus = bookingStatus; }
 }

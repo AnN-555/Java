@@ -1,15 +1,19 @@
 package uit.ie303.demo.controller;
 
-import uit.ie303.demo.model.InformationCustomer;
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import uit.ie303.demo.model.ReservationRequest;
 import uit.ie303.demo.model.RoomDTO;
 import uit.ie303.demo.service.RoomService;
-import java.time.LocalDate;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/reservation")
@@ -51,23 +55,4 @@ public class TestController {
         return ResponseEntity.ok(service.getAvailableRooms());
     }
 
-
-
-
-    @PostMapping("/InformationCustomer")
-    public ResponseEntity<?> createInformationCustomer(@RequestBody InformationCustomer temp) {
-        System.out.println("=== RECEIVED TEMP RESERVATION ===");
-        System.out.println("Room ID   : " + temp.getRoomId());
-        System.out.println("Check-in  : " + temp.getCheckIn());
-        System.out.println("Check-out : " + temp.getCheckOut());
-        System.out.println("Customer  : " + temp.getCustomer().getFirstName() + " " + temp.getCustomer().getLastName());
-        System.out.println("Phone     : " + temp.getCustomer().getPhone());
-        System.out.println("Email     : " + temp.getCustomer().getEmail());
-        System.out.println("Country   : " + temp.getCustomer().getCountry());
-
-        // Lưu tạm, tạo tempId
-        String tempId = "TEMP" + System.currentTimeMillis();
-
-        return ResponseEntity.ok(Map.of("tempId", tempId));
-    }
 }

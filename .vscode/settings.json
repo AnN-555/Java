@@ -4,5 +4,9 @@
         "backend/src",
         "reservationapp/src/main/java/com/mycompany/reservationapp"
     ],
+<<<<<<< HEAD
     "java.compile.nullAnalysis.mode": "disabled"
+=======
+    "java.configuration.updateBuildConfiguration": "interactive"
+>>>>>>> fe639288e3755a4c4669aa8f78dafbfc4bc15584
 }

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation Page 3</title>
+    <title>Reservation Page 5</title>
     <link rel="stylesheet" href="/css/reservation/nav-style.css">
     <link href="../css/reservation/reservation-3.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
     <header>
     <nav class="nav">
       <div class="logo">
@@ -31,197 +30,122 @@
     </nav>
   </header>
 
-    <!--track your phase-->
+    <!-- Track your phase -->
     <div class="phase">
-      <ul>
-        <li>
-          <img
-            src="../images/reservation/reservation-page-4/check_1.png"
-            alt="step 1"
-            style="height: 20px">
-          DESTINATION
-        </li>
-
-        <li></li>
-
-        <li>
-          <img
-            src="../images/reservation/reservation-page-4/check_1.png"
-            alt="step 2"
-            style="height: 20px">
-          ROOMS
-        </li>
-
-        <li></li>
-
-        <li>
-          <img
-            src="../images/reservation/reservation-page-2/number_3.png"
-            alt="step 3"
-            style="height: 20px">
-          SPECIAL REQUEST
-        </li>
-
-        <li></li>
-
-        <li class="upcoming__phase">
-          <img
-            src="../images/reservation/reservation-page-2/number_4.png"
-            alt="step 4"
-            style="height: 20px">
-          CONFIRM
-        </li>
-      </ul>
+        <ul>
+            <li>
+                <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 1" style="height: 20px">
+                DESTINATION
+            </li>
+            <li></li>
+            <li>
+                <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 2" style="height: 20px">
+                ROOMS
+            </li>
+            <li></li>
+            <li>
+                <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 3" style="height: 20px">
+                SPECIAL REQUEST
+            </li>
+            <li></li>
+            <li>
+                <img src="../../images/reservation/reservation-page-2/number_4.png" alt="step 4" style="height: 20px">
+                CONFIRM
+            </li>
+        </ul>
     </div>
 
-    <!--current description-->
-    <h1>How can we make your stay special</h1>
+    <h1>Confirm your reservation</h1>
 
-    <div class="room__sum">
-      <div class="room__request">
-        <div class="room">
-          <div class="room__image">
-            <img
-              src="../images/reservation/reservation-page-2/deluxe-room.jpg"
-              alt="Image Deluxe Room">
-          </div>
-
-          <div class="room__detail">
-            <h2>Deluxe Room</h2>
-            <hr>
-            <p>
-              Cozy cocoons of contentment. Spend your time in our stylishly
-              appointed Deluxe Rooms.
-            </p>
-            <div class="room__detail__booking">
-              <span>02 guests 35m<sup>2</sup></span>
-
-              <div class="room__detail__booking__price">
-                <p>1 VND</p>
-              </div>
+    <div class="container">
+        <div class="detail_box">
+            <h2>Your detail</h2>
+            <div class="information">
+                <img src="../../images/reservation/reservation-page-5/information.png" alt="image info" style="height: 20px">
             </div>
-          </div>
-        </div>
+            <div class="information">
+                <img src="../../images/reservation/reservation-page-5/telephone.png" alt="image info" style="height: 20px">
+            </div>
+            <div class="information">
+                <img src="../../images/reservation/reservation-page-5/email.png" alt="image info" style="height: 20px">
+            </div>
+            <div class="information">
+                <img src="../../images/reservation/reservation-page-5/location.png" alt="image info" style="height: 20px">
+            </div>
 
-        <div class="special__request">
-          <h2>Any special requests?</h2>
-          <span>
-            Please let us know of any special requests we can forward to hotel
-            reservation team (special requests are subject to availability).
-          </span>
+            <section class="payment_box">
+    <h2>Your payment method</h2>
+    <p>Scan the QR code below to complete your reservation.</p>
 
-          <div class="checkbox__option">
-            <label>
-              <input type="checkbox" name="agree" value="yes">
-              Accessible Room
-            </label>
+    <!-- Button -->
+    <button id="qrBtn" class="continue-btn" style="margin-top: 15px;">
+        PAY WITH QR
+    </button>
 
-            <label>
-              <input type="checkbox" name="agree" value="yes">
-              Accessible Room
-            </label>
+    <!-- Modal -->
+    <div id="qrModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
 
-            <label>
-              <input type="checkbox" name="agree" value="yes">
-              Accessible Room
-            </label>
-          </div>
-
-          <textarea
-            class="commment__box"
-            placeholder="Is there anything else you would like us to know?"></textarea>
-        </div>
+        <img
+          id="qrImage"
+          src="https://img.vietqr.io/image/970436-0071001196815-Reserved%20successful.png?amount=10&addInfo=Thank%20you%20for%20your%20reservation&accountName=Diamond%20Land%20Hotel"
+          alt="QR Payment"
+        />
+        <p>Scan this QR to complete payment</p>
       </div>
-
-      <div class="payment">
-        <h2>Your stay</h2>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/location.png"
-            alt="image location"
-            style="height: 20px">
-          Thu Duc Ward, Ho Chi Minh City, Vietnam
+    </div>
+</section>
         </div>
 
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/calender.png"
-            alt="image calender"
-            style="height: 20px">
-          26 Sep 2025 - 27 Sep 2025 (1 Night)
+        <div class="stay_box">
+            <h2>Your stay</h2>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/location.png" alt="image location" style="height: 20px">
+                Thu Duc Ward, Ho Chi Minh City, Vietnam
+            </div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/calender.png" alt="image calender" style="height: 20px">
+                26 Sep 2025 - 27 Sep 2025 (1 Night)
+            </div>
+            <div class="stay-box-image">
+                <img src="../../images/reservation/reservation-page-4/deluxe-room.jpg" alt="Image Deluxe Room">
+            </div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/room.png" alt="image room" style="height: 20px">
+                Deluxe Room
+            </div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/people.png" alt="image people" style="height: 20px">
+                1 Room - 2 Guests
+            </div>
+            <div class="stay-box-detail">RATE DETAILS</div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/check.png" alt="image info" style="height: 20px">
+                Buffet breakfast included
+            </div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/info.png" alt="image info" style="height: 20px">
+                Reservation must be cancelled 3 days prior to arrival to avoid penalty of 100% stay including tax
+            </div>
+            <div class="stay-box-detail">
+                <img src="../../images/reservation/reservation-page-4/info.png" alt="image info" style="height: 20px">
+                Reservation must be guaranteed with a valid credit card
+            </div>
+            <span>exc. taxes & fees</span>
+            <span>Taxes & fees</span>
+            <span>Total cost</span>
+            <hr>
+
+            <h2>Best Price Guarantee</h2>
+            <p>
+                When you book directly with Dinamond Land Hotel, you can be sure that
+                you are getting the best publicly available price on the room of your
+                choice.
+            </p>
         </div>
-
-        <div class="payment__image">
-          <img
-            src="../images/reservation/reservation-page-2/deluxe-room.jpg"
-            alt="Image Deluxe Room">
-        </div>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/room.png"
-            alt="image room"
-            style="height: 20px">
-          Deluxe Room
-        </div>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/people.png"
-            alt="image people"
-            style="height: 20px">
-          1 Room - 2 Guests
-        </div>
-
-        <p></p>
-
-        <div class="payment__detail">RATE DETAILS</div>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/check.png"
-            alt="image info"
-            style="height: 20px">
-          Buffet breakfast included
-        </div>
-
-        <p></p>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/info.png"
-            alt="image info"
-            style="height: 20px">
-          Reservation must be cancelled 3 days prior to arrival to avoid penalty
-          of 100% stay including tax
-        </div>
-
-        <div class="payment__detail">
-          <img
-            src="../images/reservation/reservation-page-3/info.png"
-            alt="image info"
-            style="height: 20px">
-          Reservation must be guaranteed with a valid credit card
-        </div>
-
-        <span>exc. taxes & fees</span>
-        <span>Taxes & fees</span>
-        <span>Total cost</span>
-
-        <button class="payment__button">CONTINUE TO PAYMENT</button>
-
-        <hr>
-
-        <h2>Best Price Guarantee</h2>
-        <p>
-          When you book directly with Dinamond Land Hotel, you can be sure that
-          you are getting the best publicly available price on the room of your
-          choice.
-        </p>
-      </div>
     </div>
 
     <script src="../js/reservation/reservation-3.js"></script>
-  </body>
+</body>
 </html>

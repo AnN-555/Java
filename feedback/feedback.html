@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Feedback - Diamond Land Hotel</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/homepage/style-homePage.css">
+    <link rel="stylesheet" href="/css/feedback/feedback-style.css"> 
+</head>
+
+<body>
+    <nav class="nav">
+        <i class="fa-solid fa-bars" id="hamburger"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+        <div class="menu-logo">
+            <a href="/homePage.html">
+                <img src="/images/logo3.png" alt="Dimond Hotel Logo">
+            </a>
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li><a href="/homePage.html">HOME</a></li>
+                <li><a href="/room-pages/roomPages.html">ROOMS</a></li>
+                <li><a href="/dining/index.html">DINING</a></li>
+                <li><a href="/about-us/index.html">ABOUT US</a></li>
+                <li><a href="/feedback.html" class="active-link">FEEDBACK</a></li>
+            </ul>
+        </div>
+        <div class="booking">
+            <a href="/reservation/reservation-page-1.html" class="reserve-button">RESERVE</a>
+            <div class="icons"><p>EN</p></div>
+        </div>
+    </nav>
+
+    <div class="feedback-banner">
+        <h1>GUEST EXPERIENCES</h1>
+        <p>Your words inspire our excellence</p>
+    </div>
+
+    <main class="feedback-container">
+        
+        <section class="form-section">
+            <div class="form-box">
+                <h2>Share Your Story</h2>
+                <div class="line"></div>
+                <p>We value every feedback to improve our services.</p>
+                
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fb-name" placeholder="E.g. John Doe">
+                </div>
+                
+                <div class="input-group">
+                    <label>Your Experience</label>
+                    <textarea id="fb-comment" rows="5" placeholder="Tell us about your stay..."></textarea>
+                </div>
+
+                <button onclick="submitFeedback()" class="btn-submit">SUBMIT REVIEW</button>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Recent Reviews</h2>
+            <div class="line"></div>
+            
+            <div id="feedback-list" class="review-grid">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-infor">
+            <h3>DIAMOND LAND HOTEL</h3>
+            <p>Han Thuyen Street, Thu Duc Ward, HCMC, Vietnam</p>
+            <p>Tel: +84 (0) 28 1234 0000</p>
+            <p>Email: info@diamondland.com</p>
+        </div>
+        <div class="footer-about">
+            <h3>ABOUT</h3>
+            <a href="/about-us/index.html">ABOUT DIAMOND LAND</a>
+            <a href="#">CAREER</a>
+            <a href="#">CONTACT US</a>
+        </div>
+        <div class="footer-inquiries">
+            <h3>INQUIRIES</h3>
+            <a href="/reservation/reservation-page-1.html">MAKE A RESERVATION</a>
+            <a href="/room-pages/roomPages.html">ROOMS</a>
+        </div>
+        <div class="footer-social">
+            <h3>LET’S KEEP IN TOUCH</h3>
+            <div class="footer-social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/feedback/script.js"></script>
+</body>
+</html>

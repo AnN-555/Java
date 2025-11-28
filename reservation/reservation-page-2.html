@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation Page 2</title>
 
-    <link href="../css/reservation/reservation-2.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/reservation/nav-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation Page 4</title>
+  <link rel="stylesheet" href="/css/reservation/nav-style.css">
+  <link href="../css/reservation/reservation-2.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    >
-  </head>
-
-  <body>
-    <header>
+<body>
+  <header>
     <nav class="nav">
       <div class="logo">
         <a href="/homePage.html">
@@ -33,171 +31,168 @@
       </div>
     </nav>
   </header>
+  <!--track your phase-->
+  <div class="phase">
+    <ul>
+      <li>
+        <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 1" style="height: 20px">
+        DESTINATION
+      </li>
+      <li></li>
+      <li>
+        <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 2" style="height: 20px">ROOMS
+      </li>
+      <li></li>
+      <li>
+        <img src="../../images/reservation/reservation-page-4/check_1.png" alt="step 3" style="height: 20px">SPECIAL
+        REQUEST
+      </li>
+      <li></li>
+      <li>
+        <img src="../../images/reservation/reservation-page-2/number_4.png" alt="step 4" style="height: 20px">CONFIRM
+      </li>
+    </ul>
+  </div>
+  <h1>Confirm your reservation</h1>
+  <div class="container">
+    <div class="detail_box">
+      <h2>Your detail</h2>
+      <p>All fields are required</p>
+      <form>
+        <div class="input-group">
+          <h2>Title</h2>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="title" value="Mr"> Mr
+            </label>
 
-    <div class="phase">
-      <ul>
-        <li>
-          <img
-            src="../images/reservation/reservation-page-4/check_1.png"
-            alt="step 1"
-            style="height: 20px"
-          >
-          DESTINATION
-        </li>
-        <li></li>
-        <li>
-          <img
-            src="../images/reservation/reservation-page-2/number_2.png"
-            alt="step 2"
-            style="height: 20px"
-          >
-          ROOMS
-        </li>
-        <li></li>
-        <li class="upcoming__phase">
-          <img
-            src="../images/reservation/reservation-page-2/number_3.png"
-            alt="step 3"
-            style="height: 20px"
-          >
-          SPECIAL REQUEST
-        </li>
-        <li></li>
-        <li class="upcoming__phase">
-          <img
-            src="../images/reservation/reservation-page-2/number_4.png"
-            alt="step 4"
-            style="height: 20px"
-          >
-          CONFIRM
-        </li>
-      </ul>
+            <label>
+              <input type="radio" name="title" value="Ms"> Ms
+            </label>
+
+            <label>
+              <input type="radio" name="title" value="Mrs"> Mrs
+            </label>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>First name</label>
+            <input type="text" placeholder="First name" >
+          </div>
+          <div class="input-group">
+            <label>Last name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group small">
+            <label>Code</label>
+            <select>
+              <option>VN +84</option>
+              <option>US +1</option>
+              <option>JP +81</option>
+            </select>
+          </div>
+          <div class="input-group large">
+            <label>Phone number</label>
+            <input type="text" placeholder="Phone number">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Email</label>
+            <input type="text" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>City</label>
+            <input type="text" placeholder="City">
+          </div>
+          <div class="input-group">
+            <label>Country</label>
+            <select id="countrySelect">
+              <option>Vietnam</option>
+              <option>Japan</option>
+              <option>USA</option>
+            </select>
+          </div>
+        </div>
+        <p></p>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox"> * I will present a valid ID during check in
+          </label>
+          <label>
+            <input type="checkbox"> * I have read and agree to
+            <a href="#">Terms & Conditions</a>.
+            <span class="subtext">
+              For details of how we process your personal data please refer to our
+              <a href="#">Privacy Policy</a>.
+            </span>
+          </label>
+        </div>
+        <button type="submit" class="continue-btn">CONTINUE TO RESERVE</button>
+
+      </form>
     </div>
 
-    <h1>Choose your accommodation</h1>
-
-    <div class="detail__select">
-      <div class="room">
-        <div class="room__image">
-          <img
-            src="../images/reservation/reservation-page-2/deluxe-room.jpg"
-            alt="Image Deluxe Room"
-          >
-        </div>
-        <div class="room__detail">
-          <h2>Deluxe Room</h2>
-          <hr>
-          <p>
-            Cozy cocoons of contentment. Spend your time in our stylishly
-            appointed Deluxe Rooms.
-          </p>
-          <div class="room__detail__booking">
-            <span> 02 guests 35m<sup>2</sup></span>
-            <div class="room__detail__booking__price">
-              <p>1 VND</p>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-        </div>
+    <div class="stay_box">
+      <h2>Your stay</h2>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/location.png" alt="image location" style="height: 20px">
+        Thu Duc Ward, Ho Chi Minh City, Vietnam
       </div>
-
-      <div class="room">
-        <div class="room__image">
-          <img
-            src="../images/reservation/reservation-page-2/deluxe-twin-room.png"
-            alt="Image Deluxe Twin Room"
-          >
-        </div>
-        <div class="room__detail">
-          <h2>Deluxe Twin Room</h2>
-          <hr>
-          <p>
-            Plush elegance awaits you in our divine Premium Rooms. Embrace
-            yourself in warmth as you...
-          </p>
-          <div class="room__detail__booking">
-            <span> 02 guests 35m<sup>2</sup></span>
-            <div class="room__detail__booking__price">
-              <p>1 VND</p>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-        </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/calender.png" alt="image calender" style="height: 20px">
+        26 Sep 2025 - 27 Sep 2025 (1 Night)
       </div>
-
-      <div class="room">
-        <div class="room__image">
-          <img
-            src="../images/reservation/reservation-page-2/superior-room.jpg"
-            alt="Image Superior Room"
-          >
-        </div>
-        <div class="room__detail">
-          <h2>Superior Room</h2>
-          <hr>
-          <p>
-            Unwind with freshly made coffees straight from the espresso machine
-            in the spacious lounge area....
-          </p>
-          <div class="room__detail__booking">
-            <span> 02 guests 40m<sup>2</sup></span>
-            <div class="room__detail__booking__price">
-              <p>1 VND</p>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-        </div>
+      <div class="stay-box-image">
+        <img src="../../images/reservation/reservation-page-4/deluxe-room.jpg" alt="Image Deluxe Room">
       </div>
-
-      <div class="room">
-        <div class="room__image">
-          <img
-            src="../images/reservation/reservation-page-2/diamond-room.jpg"
-            alt="Image Diamond"
-          >
-        </div>
-        <div class="room__detail">
-          <h2>Diamond Suite</h2>
-          <hr>
-          <p>
-            Unwind with freshly made coffees straight from the espresso machine
-            in the spacious lounge area....
-          </p>
-          <div class="room__detail__booking">
-            <span> 02 guests 50m<sup>2</sup></span>
-            <div class="room__detail__booking__price">
-              <p>1 VND</p>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-        </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/room.png" alt="image room" style="height: 20px">
+        Deluxe Room
       </div>
-
-      <div class="room">
-        <div class="room__image">
-          <img
-            src="../images/reservation/reservation-page-2/president-room.jpg"
-            alt="Image President Room"
-          >
-        </div>
-        <div class="room__detail">
-          <h2>President Suite</h2>
-          <hr>
-          <p>
-            A balance between classic elegance and contemporary convenience
-            gives you absolute privacy and blissful relaxation....
-          </p>
-          <div class="room__detail__booking">
-            <span> 02 guests 139m<sup>2</sup></span>
-            <div class="room__detail__booking__price">
-              <p>1 VND</p>
-              <button>BOOK NOW</button>
-            </div>
-          </div>
-        </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/people.png" alt="image people" style="height: 20px">
+        1 Room - 2 Guests
       </div>
+      <div class="stay-box-detail">RATE DETAILS</div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/check.png" alt="image info" style="height: 20px">
+        Buffet breakfast included
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/info.png" alt="image info" style="height: 20px">
+        Reservation must be cancelled 3 days prior to arrival to avoid penalty
+        of 100% stay including tax
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-4/info.png" alt="image info" style="height: 20px">
+        Reservation must be guaranteed with a valid credit card
+      </div>
+      <span>exc. taxes & fees</span>
+      <span>Taxes & fees</span>
+      <span>Total cost</span>
+      <p></p>
+      <hr>
+
+      <h2>Best Price Guarantee</h2>
+      <p>
+        When you book directly with Dinamond Land Hotel, you can be sure that
+        you are getting the best publicly available price on the room of your
+        choice.
+      </p>
+
+
     </div>
-
-    <script src="../js/reservation/reservation-2.js"></script>
-  </body>
-</html>
+  </div>
+  <script src="../js/reservation/reservation-2.js"></script>
+</body>

@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('stay_children', childrenVal);
                 localStorage.setItem('stay_guests', `${roomsVal} Room(s) - ${parseInt(adultsVal)+parseInt(childrenVal)} Guests`);
 
-                window.location.href = './reservation-page-4.html';
+                window.location.href = './reservation-page-2.html';
             });
         });
     };

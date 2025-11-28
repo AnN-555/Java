@@ -1,55 +1,33 @@
 package uit.ie303.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "booking_details")
 public class BookingDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "booking_detail_id")
-    private Long id;
+    private Long bookingDetailId;
 
     @ManyToOne
-    @JoinColumn(name = "booking_id", nullable = false)
+    @JoinColumn(name = "booking_id")
     private Booking booking;
 
     @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
-    private Rooms room;
+    @JoinColumn(name = "room_id")
+    private Room room;
 
-    /* getter and setter */
-
-    public Long getRoomId(){
-        return this.room.getId();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Booking getBooking() {
-        return booking;
-    }
-
-    public void setBooking(Booking booking) {
-        this.booking = booking;
-    }
-
-    public Rooms getRoom() {
-        return room;
-    }
-
-    public void setRoom(Rooms room) {
-        this.room = room;
-    }
-
+    // Getters & Setters
+    public Long getBookingDetailId() { return bookingDetailId; }
+    public void setBookingDetailId(Long bookingDetailId) { this.bookingDetailId = bookingDetailId; }
+    public Booking getBooking() { return booking; }
+    public void setBooking(Booking booking) { this.booking = booking; }
+    public Room getRoom() { return room; }
+    public void setRoom(Room room) { this.room = room; }
 }
