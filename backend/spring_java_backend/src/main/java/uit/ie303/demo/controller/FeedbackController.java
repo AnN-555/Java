@@ -19,19 +19,19 @@ import uit.ie303.demo.service.FeedbackService;
 
 @RestController
 @RequestMapping("/api/feedback")
-@CrossOrigin(origins = "*") // Cho phép tất cả frontend
+@CrossOrigin(origins = "*") 
 public class FeedbackController {
 
     @Autowired
     private FeedbackService feedbackService;
 
-    // GET: Lấy tất cả feedback cũ
+
     @GetMapping("/all")
     public ResponseEntity<List<FeedbackDTO>> getAll() {
         return ResponseEntity.ok(feedbackService.getAllFeedbacks());
     }
 
-    // POST: Thêm feedback mới
+ 
     @PostMapping("/add")
     public ResponseEntity<Map<String, Object>> add(@RequestBody Map<String, String> body) {
         String name = body.get("customerName");

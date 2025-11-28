@@ -17,12 +17,10 @@ import uit.ie303.demo.service.RoomService;
 
 @RestController
 @RequestMapping("/api/reservation")
-@CrossOrigin(origins = "*") // Cho phép gọi API từ Live Server hoặc port khác
+@CrossOrigin(origins = "*") 
 public class TestController {
 
-    // ============================
-    // 1) API SEARCH RESERVATION
-    // ============================
+
     @PostMapping("/search")
     public ResponseEntity<?> searchReservation(@RequestBody ReservationRequest request) {
 
@@ -46,9 +44,7 @@ public class TestController {
        
 }
 
-    // ============================
-    // 2) API LẤY DANH SÁCH PHÒNG
-    // ============================
+
     @GetMapping("/rooms")
     public ResponseEntity<?> getAvailableRooms() {
         RoomService service = new RoomService();

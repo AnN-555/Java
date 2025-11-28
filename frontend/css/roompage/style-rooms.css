@@ -132,19 +132,19 @@ h3 {
     position: relative;
     padding-top: 50%;
     margin-top: 80px;
-    background: url('/images/rooms/rooms/room-deluxe/deluxe-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/rooms/room-deluxe/deluxe-banner.png') top center / cover no-repeat;
 }
 .twin {
-    background: url('/images/rooms/rooms/room-twin/twin-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/rooms/room-twin/twin-banner.png') top center / cover no-repeat;
 }
 .superior {
-    background: url('/images/rooms/rooms/room-superior/superior-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/rooms/room-superior/superior-banner.png') top center / cover no-repeat;
 }
 .dinamond {
-    background: url('/images/rooms/rooms/room-dinamond/dinamond-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/rooms/room-dinamond/dinamond-banner.png') top center / cover no-repeat;
 }
 .president {
-    background: url('/images/rooms/rooms/room-president/president-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/rooms/room-president/president-banner.png') top center / cover no-repeat;
 }
 
 .banner__room h1 {

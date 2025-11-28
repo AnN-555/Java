@@ -24,16 +24,13 @@ public class ReservationService {
     private static final String DB_PASS = "diamond";
     private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    /**
-     * Lưu reservation - dùng bookingId từ frontend làm khóa chính
-     */
     public String saveReservationToDb(ReservationDTO dto) throws Exception {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
             conn.setAutoCommit(false);
 
-            String bookingId = dto.getBookingId(); // Dùng luôn từ frontend
+            String bookingId = dto.getBookingId(); 
             if (bookingId == null || bookingId.trim().isEmpty()) {
                 throw new IllegalArgumentException("Booking ID từ frontend không được để trống!");
             }
@@ -74,7 +71,7 @@ public class ReservationService {
             insertPayment(conn, bookingId, dto.getTotalPrice());
 
             conn.commit();
-            return bookingId; // Trả về mã để frontend biết đã lưu thành công
+            return bookingId; 
 
         } catch (Exception ex) {
             if (conn != null) {
@@ -86,7 +83,7 @@ public class ReservationService {
         }
     }
 
-    // === Các method phụ (giữ nguyên, chỉ sửa insertBooking) ===
+   
 
     private Integer findExistingCustomer(Connection conn, String email, String phone) throws SQLException {
         String sql = "SELECT customer_id FROM customers WHERE email = ? OR phone_number = ?";
@@ -150,7 +147,7 @@ public class ReservationService {
         return result;
     }
 
-    // QUAN TRỌNG: Dùng bookingId từ frontend, không RETURN_GENERATED_KEYS
+   
     private void insertBooking(Connection conn, String bookingId, int customerId,
                                Timestamp checkIn, Timestamp checkOut, ReservationDTO dto) throws SQLException {
         String sql = """

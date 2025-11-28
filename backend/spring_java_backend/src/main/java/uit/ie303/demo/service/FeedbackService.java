@@ -1,4 +1,4 @@
-// src/main/java/uit/ie303/demo/service/FeedbackService.java
+
 package uit.ie303.demo.service;
 
 import java.sql.Connection;
@@ -20,7 +20,7 @@ public class FeedbackService {
     private static final String DB_USER = "diamondhotel";
     private static final String DB_PASS = "diamond";
 
-    // LẤY TẤT CẢ FEEDBACK (mới nhất trước)
+ 
     public List<FeedbackDTO> getAllFeedbacks() {
         List<FeedbackDTO> list = new ArrayList<>();
         String sql = "SELECT customer_name, comment, created_at FROM feedback ORDER BY created_at DESC";

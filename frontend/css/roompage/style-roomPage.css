@@ -135,7 +135,7 @@ h4 {
     position: relative;
     padding-top: 50%;
     margin-top: 80px;
-    background: url('/images/rooms/room-banner.png') top center / cover no-repeat;
+    background: url('../../images/rooms/room-banner.png') top center / cover no-repeat;
 }
 
 .banner__home h1 {

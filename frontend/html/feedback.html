@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Feedback - Diamond Land Hotel</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/homepage/style-homePage.css">
+    <link rel="stylesheet" href="../css/feedback/feedback-style.css"> 
+</head>
+
+<body>
+    <nav class="nav">
+        <i class="fa-solid fa-bars" id="hamburger"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+        <div class="menu-logo">
+            <a href="../html/homePage.html">
+                <img src="../images/logo3.png" alt="Dimond Hotel Logo">
+            </a>
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li><a href="../html/homePage.html">HOME</a></li>
+                <li><a href="../html/roomPages.html">ROOMS</a></li>
+                <li><a href="../html/dining.html">DINING</a></li>
+                <li><a href="../html/about-us.html">ABOUT US</a></li>
+                <li><a href="../html/feedback.html" class="active-link">FEEDBACK</a></li>
+            </ul>
+        </div>
+        <div class="booking">
+            <a href="../html/reservation-page-1.html" class="reserve-button">RESERVE</a>
+            <div class="icons"><p>EN</p></div>
+        </div>
+    </nav>
+
+    <div class="feedback-banner">
+        <h1>GUEST EXPERIENCES</h1>
+        <p>Your words inspire our excellence</p>
+    </div>
+
+    <main class="feedback-container">
+        
+        <section class="form-section">
+            <div class="form-box">
+                <h2>Share Your Story</h2>
+                <div class="line"></div>
+                <p>We value every feedback to improve our services.</p>
+                
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fb-name" placeholder="E.g. John Doe">
+                </div>
+                
+                <div class="input-group">
+                    <label>Your Experience</label>
+                    <textarea id="fb-comment" rows="5" placeholder="Tell us about your stay..."></textarea>
+                </div>
+
+                <button onclick="submitFeedback()" class="btn-submit">SUBMIT REVIEW</button>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Recent Reviews</h2>
+            <div class="line"></div>
+            
+            <div id="feedback-list" class="review-grid">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-infor">
+            <h3>DIAMOND LAND HOTEL</h3>
+            <p>Han Thuyen Street, Thu Duc Ward, HCMC, Vietnam</p>
+            <p>Tel: +84 (0) 28 1234 0000</p>
+            <p>Email: info@diamondland.com</p>
+        </div>
+        <div class="footer-about">
+            <h3>ABOUT</h3>
+            <a href="../html/about-us.html">ABOUT DIAMOND LAND</a>
+            <a href="#">CAREER</a>
+            <a href="#">CONTACT US</a>
+        </div>
+        <div class="footer-inquiries">
+            <h3>INQUIRIES</h3>
+            <a href="../html/reservation-page-1.html">MAKE A RESERVATION</a>
+            <a href="../html/roomPages.html">ROOMS</a>
+        </div>
+        <div class="footer-social">
+            <h3>LET’S KEEP IN TOUCH</h3>
+            <div class="footer-social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/feedback/feedback.js"></script>
+</body>
+</html>
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script>
+  window.__ow = window.__ow || {};
+  window.__ow.organizationId = "65645217-2729-4e0a-b381-f1ef6a904d76";
+  window.__ow.template_id = "7734265f-532d-4328-9ce9-27f742b28119";
+  window.__ow.integration_name = "manual_settings";
+  window.__ow.product_name = "chatbot";   
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->

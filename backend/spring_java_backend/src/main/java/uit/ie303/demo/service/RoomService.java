@@ -31,8 +31,8 @@ public class RoomService {
                      "    FROM booking_details bd " +
                      "    INNER JOIN booking b ON bd.booking_id = b.booking_id " +
                      "    WHERE b.booking_status IN ('Confirmed','Pending') " +
-                     "      AND b.checkin_date < ? " + // booking bắt đầu trước check-out
-                     "      AND b.checkout_date > ? " + // booking kết thúc sau check-in
+                     "      AND b.checkin_date < ? " + 
+                     "      AND b.checkout_date > ? " + 
                      ")";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
@@ -50,7 +50,7 @@ public class RoomService {
                         rs.getString("room_view"),
                         rs.getString("image_url"),
                         checkIn,
-                        checkOut // thêm ngày check-in/check-out cho DTO
+                        checkOut 
                 ));
             }
 
@@ -80,8 +80,8 @@ public class RoomService {
                         rs.getInt("price"),
                         rs.getString("room_view"),
                         rs.getString("image_url"),
-                        null, // check-in null vì không lọc theo ngày
-                        null  // check-out null
+                        null, 
+                        null 
                 ));
             }
 
