@@ -1,6 +1,9 @@
+// src/main/java/uit/ie303/demo/controller/FeedbackController.java
 package uit.ie303.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,27 +14,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import uit.ie303.demo.model.Feedback;
+import uit.ie303.demo.model.FeedbackDTO;
 import uit.ie303.demo.service.FeedbackService;
 
 @RestController
 @RequestMapping("/api/feedback")
-@CrossOrigin(origins = "*") // Cho phép Frontend gọi API
+@CrossOrigin(origins = "*") // Cho phép tất cả frontend
 public class FeedbackController {
 
     @Autowired
     private FeedbackService feedbackService;
 
-    // API: Lấy tất cả feedback
+    // GET: Lấy tất cả feedback cũ
     @GetMapping("/all")
-    public List<Feedback> getAllFeedbacks() {
-        return feedbackService.getAllFeedbacks();
+    public ResponseEntity<List<FeedbackDTO>> getAll() {
+        return ResponseEntity.ok(feedbackService.getAllFeedbacks());
     }
 
-    // API: Gửi feedback mới
+    // POST: Thêm feedback mới
     @PostMapping("/add")
-    public ResponseEntity<Feedback> addFeedback(@RequestBody Feedback feedback) {
-        Feedback newFeedback = feedbackService.saveFeedback(feedback);
-        return ResponseEntity.ok(newFeedback);
+    public ResponseEntity<Map<String, Object>> add(@RequestBody Map<String, String> body) {
+        String name = body.get("customerName");
+        String comment = body.get("comment");
+
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            feedbackService.addFeedback(name, comment);
+            resp.put("success", true);
+            resp.put("message", "Cảm ơn bạn đã đánh giá!");
+            return ResponseEntity.ok(resp);
+        } catch (Exception e) {
+            resp.put("success", false);
+            resp.put("message", e.getMessage());
+            return ResponseEntity.badRequest().body(resp);
+        }
     }
 }
