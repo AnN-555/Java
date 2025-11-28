@@ -571,3 +571,44 @@ html {
     width: 300px;
     height: auto;
 }
+
+.footer {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    background-color: #EBE3D7;
+    padding: 6.25vw 0;
+}
+
+.footer h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 1.6vw;
+}
+
+.footer p {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 1.6vw;
+}
+
+
+.footer a {
+    font-size: 1rem;
+    display: block;
+    color: #212322;
+    text-decoration: none;
+    margin-bottom: 1.6vw;
+}
+
+.footer .fa-brands {
+    font-size: 2.5rem;
+}
+
+#hamburger,
+#close {
+    display: none;
+}
