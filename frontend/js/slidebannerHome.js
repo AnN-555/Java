@@ -1,32 +1,35 @@
-const imgContainer = document.querySelector('.img-container'); 
-const prevBtn = document.querySelector('.prv');      
-const nextBtn = document.querySelector('.nxt');       
-const images = document.querySelectorAll('.img-container img');
+fetch(`http://localhost:8080/api/booking/${bookingId}`)
+    .then(response => {
+        if (!response.ok) throw new Error("Booking not found");
+        return response.json();
+    })
+    .then(data => {
+        console.log("Fetched data:", data);
+        if (data && data.id) {
+            document.getElementById('displayId').textContent = data.id;
+            document.getElementById('customerName').textContent = data.fullName;
+            document.getElementById('customerEmail').textContent = data.email;
+            document.getElementById('checkIn').textContent = formatDate(data.checkIn);
+            document.getElementById('checkOut').textContent = formatDate(data.checkOut);
+            document.getElementById('nights').textContent = data.nights + ' đêm';
+            document.getElementById('totalAmount').textContent = formatCurrency(data.totalAmount);
+            
+            // Fix room image path
+            const imgPath = data.roomImage.startsWith('http') 
+                ? data.roomImage 
+                : '/' + data.roomImage.replace(/^(\.\.\/)+/, ''); 
+            document.getElementById('roomImage').src = imgPath;
+            
+            document.getElementById('roomType').textContent = data.roomType;
 
-let currentIndex = 0;
-const totalImages = images.length;
-
-function updateSlider() {
-    imgContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    setTimeout(() => {
-        currentIndex++;
-        if (currentIndex >= totalImages) currentIndex = 0;
-        updateSlider();
-    },4000);
-}
-
-// nextBtn.addEventListener('click', () => {
-//     currentIndex++;
-//     if (currentIndex >= totalImages) 
-//         currentIndex = 0;
-//     updateSlider();
-// });
-
-// prevBtn.addEventListener('click', () => {
-//     currentIndex--;
-//     if (currentIndex < 0) 
-//         currentIndex = totalImages - 1;
-//     updateSlider();
-// });
-
-updateSlider();
+            document.getElementById('searchSection').style.display = 'none';
+            document.getElementById('resultSection').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+        } else {
+            showError();
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        showError();
+    });

@@ -24,7 +24,7 @@
 
 /* Container */
 .lookup-container {
-    max-width: 1100px;
+    max-width: 1200px; /* rộng hơn container */
     margin: 80px auto;
     padding: 0 20px;
 }
@@ -40,7 +40,7 @@
     padding: 50px 40px;
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     border: 1px solid #e0d0b0;
 }
@@ -113,7 +113,7 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-    max-width: 900px;
+    max-width: 1100px; /* rộng hơn */
     margin: 0 auto;
     border: 1px solid #eee;
 }
@@ -136,15 +136,15 @@
     position: absolute;
     top: 20px;
     right: 30px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
 }
 
 .booking-info-grid {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 40px;
-    padding: 40px;
+    grid-template-columns: 1.4fr 1.6fr; /* ảnh + thông tin rộng hơn */
+    gap: 50px;
+    padding: 50px;
 }
 
 .room-image {
@@ -156,8 +156,9 @@
 
 .room-image img {
     width: 100%;
-    height: 380px;
+    height: 420px; /* cao hơn */
     object-fit: cover;
+    border-radius: 12px;
 }
 
 .room-type {
@@ -167,8 +168,8 @@
     right: 0;
     background: rgba(0,0,0,0.7);
     color: white;
-    padding: 15px;
-    font-size: 1.4rem;
+    padding: 18px;
+    font-size: 1.6rem;
     font-weight: bold;
     text-align: center;
     font-family: "Old Standard TT", serif;
@@ -176,9 +177,9 @@
 
 .booking-details .detail-item {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px 0;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
     border-bottom: 1px dashed #eee;
 }
 
@@ -187,21 +188,21 @@
 }
 
 .booking-details i {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #bfa67a;
-    width: 40px;
+    width: 45px;
 }
 
 .booking-details strong {
     display: block;
     color: #333;
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 4px;
 }
 
 .booking-details p {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #222;
     font-weight: 500;
 }
@@ -213,7 +214,7 @@
 }
 
 .total p {
-    font-size: 1.8rem !important;
+    font-size: 1.9rem !important;
     color: #bfa67a !important;
     font-weight: bold !important;
 }
@@ -259,12 +260,23 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .booking-info-grid {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 40px;
+        padding: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     .banner-content h1 { font-size: 2.8rem; }
     .booking-info-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
     }
     .card-header h2 { font-size: 2rem; }
     .input-wrapper { flex-direction: column; }
     .search-btn { width: 100%; }
+    .room-image img { height: 300px; }
 }

@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- Navigation (giữ nguyên như cũ, chỉ đổi active link) -->
+    <!-- Navigation -->
     <nav class="nav">
         <i class="fa-solid fa-bars" id="hamburger"></i>
         <i class="fa-solid fa-xmark" id="close"></i>
@@ -28,6 +28,7 @@
                 <li><a href="../html/roomPages.html">ROOMS</a></li>
                 <li><a href="../html/dining.html">DINING</a></li>
                 <li><a href="../html/about-us.html">ABOUT US</a></li>
+                <li><a href="../html/feedback.html">FEEDBACK</a></li>
                 <li><a href="../html/booking-lookup.html" class="active-link">BOOKING DETAILS</a></li>
             </ul>
         </div>
@@ -42,85 +43,84 @@
         <div class="banner-overlay"></div>
         <div class="banner-content">
             <h1>Your Booking Details</h1>
-            <p>Nhập mã đặt phòng để xem thông tin chi tiết</p>
+            <p>Enter your booking code to view detailed information</p>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="lookup-container">
 
-        <!-- Phần nhập Booking ID -->
+        <!-- Search Section -->
         <section class="search-section" id="searchSection">
             <div class="search-box">
-                <h2>Tra cứu đặt phòng</h2>
+                <h2>Booking Lookup</h2>
                 <div class="line"></div>
                 <div class="input-wrapper">
-                    <input type="text" id="bookingId" placeholder="Nhập mã đặt phòng (ví dụ: DL2025001)" autocomplete="off">
+                    <input type="text" id="bookingId" placeholder="Enter booking code (e.g. BKG-1764333032911-343)" autocomplete="off">
                     <button onclick="lookupBooking()" class="search-btn">
-                        <i class="fas fa-search"></i> Tìm kiếm
+                        <i class="fas fa-search"></i> Search
                     </button>
                 </div>
-                <p class="note">Mã đặt phòng được gửi qua email xác nhận của quý khách</p>
+                <p class="note">Your booking code was sent to your confirmation email</p>
             </div>
         </section>
 
-        <!-- Kết quả tra cứu (ban đầu ẩn) -->
+        <!-- Result Section (initially hidden) -->
         <section class="result-section" id="resultSection" style="display: none;">
             <div class="booking-card">
                 <div class="card-header">
-                    <h2>Thông tin đặt phòng</h2>
-                    <span class="booking-id">#<span id="displayId">DL2025123</span></span>
+                    <h2>BOOKING INFORMATION</h2>
+                    <span class="booking-id">#<span id="displayId"></span></span>
                 </div>
 
                 <div class="booking-body">
-                    <!-- Ảnh phòng + thông tin bên phải -->
                     <div class="booking-info-grid">
                         <div class="room-image">
-                            <img id="roomImage" src="" alt="Phòng đã đặt">
-                            <div class="room-type" id="roomType">Deluxe Ocean View</div>
+                            <img id="roomImage" src="" alt="Booked Room">
+                            <div class="room-type" id="roomType"></div>
                         </div>
 
                         <div class="booking-details">
                             <div class="detail-item">
                                 <i class="fas fa-user"></i>
                                 <div>
-                                    <strong>Họ & tên</strong>
-                                    <p id="customerName">Nguyễn Văn A</p>
+                                    <strong>Full Name</strong>
+                                    <p id="customerName"></p>
                                 </div>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <strong>Email</strong>
-                                    <p id="customerEmail">nguyenvana@gmail.com</p>
+                                    <p id="customerEmail"></p>
                                 </div>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-calendar-check"></i>
                                 <div>
                                     <strong>Check-in</strong>
-                                    <p id="checkIn">15 Tháng 12, 2025</p>
+                                    <p id="checkIn"></p>
                                 </div>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-calendar-times"></i>
                                 <div>
                                     <strong>Check-out</strong>
-                                    <p id="checkOut">18 Tháng 12, 2025</p>
+                                    <p id="checkOut"></p>
                                 </div>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-moon"></i>
                                 <div>
-                                    <strong>Số đêm</strong>
-                                    <p id="nights">3 đêm</p>
+                                    <strong>Nights</strong>
+                                    <p id="nights"></p>
                                 </div>
                             </div>
                             <div class="detail-item total">
                                 <i class="fas fa-dollar-sign"></i>
                                 <div>
-                                    <strong>Tổng tiền</strong>
-                                    <p id="totalAmount">28,500,000 ₫</p>
+                                    <strong>Total Amount</strong>
+                                    <p id="totalAmount"></p>
                                 </div>
                             </div>
                         </div>
@@ -129,24 +129,24 @@
 
                 <div class="card-footer">
                     <button class="btn-print" onclick="window.print()">
-                        <i class="fas fa-print"></i> In thông tin
+                        <i class="fas fa-print"></i> Print
                     </button>
                     <button class="btn-contact">
-                        <i class="fas fa-headset"></i> Liên hệ hỗ trợ
+                        <i class="fas fa-headset"></i> Contact Support
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Thông báo lỗi -->
+        <!-- Error Message -->
         <div id="errorMessage" class="error-message" style="display: none;">
             <i class="fas fa-exclamation-triangle"></i>
-            Không tìm thấy thông tin đặt phòng. Vui lòng kiểm tra lại mã!
+            Booking not found. Please double-check your booking code.
         </div>
 
     </main>
 
-    <!-- Footer giữ nguyên -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-infor">
             <h3>DIAMOND LAND HOTEL</h3>
@@ -177,3 +177,14 @@
     <script src="../js/booking-lookup/booking-lookup.js"></script>
 </body>
 </html>
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script>
+  window.__ow = window.__ow || {};
+  window.__ow.organizationId = "65645217-2729-4e0a-b381-f1ef6a904d76";
+  window.__ow.template_id = "7734265f-532d-4328-9ce9-27f742b28119";
+  window.__ow.integration_name = "manual_settings";
+  window.__ow.product_name = "chatbot";   
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->

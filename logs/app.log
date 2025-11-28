@@ -885,3 +885,319 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+2025-11-29T02:29:44.670+07:00  INFO 7820 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Starting WebBackendDemoApplication using Java 21.0.9 with PID 7820 (C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java\backend\spring_java_backend\target\classes started by ADMIN in C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java)
+2025-11-29T02:29:44.674+07:00  INFO 7820 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T02:29:46.193+07:00  INFO 7820 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T02:29:46.327+07:00  INFO 7820 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 5 JPA repository interfaces.
+2025-11-29T02:29:47.575+07:00  INFO 7820 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-29T02:29:47.624+07:00  INFO 7820 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-29T02:29:47.626+07:00  INFO 7820 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-29T02:29:47.857+07:00  INFO 7820 --- [Web Backend Demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-29T02:29:47.858+07:00  INFO 7820 --- [Web Backend Demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3115 ms
+2025-11-29T02:29:48.168+07:00  INFO 7820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T02:30:18.543+07:00  INFO 7820 --- [Web Backend Demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T02:30:18.640+07:00  INFO 7820 --- [Web Backend Demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-29T02:30:18.706+07:00  INFO 7820 --- [Web Backend Demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T02:30:19.109+07:00  INFO 7820 --- [Web Backend Demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T02:30:19.155+07:00  INFO 7820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T02:30:42.534+07:00  INFO 7820 --- [Web Backend Demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 5049c353-1ad6-4f35-b6ea-18d1ba0ddde9
+2025-11-29T02:30:42.537+07:00  INFO 7820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T02:30:42.647+07:00  WARN 7820 --- [Web Backend Demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T02:30:42.685+07:00  INFO 7820 --- [Web Backend Demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T02:30:43.800+07:00  INFO 7820 --- [Web Backend Demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T02:30:43.804+07:00  INFO 7820 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T02:30:44.429+07:00  WARN 7820 --- [Web Backend Demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T02:30:44.579+07:00 DEBUG 7820 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-11-29T02:30:44.705+07:00 DEBUG 7820 --- [Web Backend Demo] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-29T02:30:44.747+07:00 DEBUG 7820 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-29T02:30:44.820+07:00 DEBUG 7820 --- [Web Backend Demo] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-29T02:30:45.049+07:00  INFO 7820 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-29T02:30:45.058+07:00  INFO 7820 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Started WebBackendDemoApplication in 61.03 seconds (process running for 61.729)
+2025-11-29T02:42:51.572+07:00  INFO 16820 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Starting WebBackendDemoApplication using Java 21.0.9 with PID 16820 (C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java\backend\spring_java_backend\target\classes started by ADMIN in C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java)
+2025-11-29T02:42:51.574+07:00  INFO 16820 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T02:42:52.314+07:00  INFO 16820 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T02:42:52.390+07:00  INFO 16820 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2025-11-29T02:42:53.053+07:00  INFO 16820 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-29T02:42:53.073+07:00  INFO 16820 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-29T02:42:53.074+07:00  INFO 16820 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-29T02:42:53.138+07:00  INFO 16820 --- [Web Backend Demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-29T02:42:53.139+07:00  INFO 16820 --- [Web Backend Demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1518 ms
+2025-11-29T02:42:53.349+07:00  INFO 16820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T02:42:53.699+07:00  INFO 16820 --- [Web Backend Demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: d5a76178-58fb-4ffa-9754-9fe6b961f056
+2025-11-29T02:42:53.701+07:00  INFO 16820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T02:42:53.834+07:00  INFO 16820 --- [Web Backend Demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T02:42:53.943+07:00  INFO 16820 --- [Web Backend Demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-29T02:42:54.011+07:00  INFO 16820 --- [Web Backend Demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T02:42:54.436+07:00  INFO 16820 --- [Web Backend Demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T02:42:54.535+07:00  WARN 16820 --- [Web Backend Demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T02:42:54.556+07:00  INFO 16820 --- [Web Backend Demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T02:42:55.304+07:00  INFO 16820 --- [Web Backend Demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T02:42:55.307+07:00  INFO 16820 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T02:42:55.693+07:00  WARN 16820 --- [Web Backend Demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T02:42:55.809+07:00 DEBUG 16820 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-11-29T02:42:55.926+07:00 DEBUG 16820 --- [Web Backend Demo] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-29T02:42:55.964+07:00 DEBUG 16820 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-29T02:42:56.030+07:00 DEBUG 16820 --- [Web Backend Demo] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-29T02:42:56.219+07:00  WARN 16820 --- [Web Backend Demo] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-11-29T02:42:56.221+07:00  INFO 16820 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T02:42:56.224+07:00  INFO 16820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-29T02:42:56.232+07:00  INFO 16820 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-29T02:42:56.246+07:00  INFO 16820 --- [Web Backend Demo] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-29T02:42:56.273+07:00 ERROR 16820 --- [Web Backend Demo] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-11-29T02:43:34.097+07:00  INFO 19236 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Starting WebBackendDemoApplication using Java 21.0.9 with PID 19236 (C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java\backend\spring_java_backend\target\classes started by ADMIN in C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java)
+2025-11-29T02:43:34.100+07:00  INFO 19236 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T02:43:34.820+07:00  INFO 19236 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T02:43:34.903+07:00  INFO 19236 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
+2025-11-29T02:43:35.543+07:00  INFO 19236 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-29T02:43:35.562+07:00  INFO 19236 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-29T02:43:35.562+07:00  INFO 19236 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-29T02:43:35.629+07:00  INFO 19236 --- [Web Backend Demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-29T02:43:35.630+07:00  INFO 19236 --- [Web Backend Demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1487 ms
+2025-11-29T02:43:35.820+07:00  INFO 19236 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T02:43:36.140+07:00  INFO 19236 --- [Web Backend Demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: b1f47ef8-c802-4070-bef5-e5e77fbf3d33
+2025-11-29T02:43:36.142+07:00  INFO 19236 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T02:43:36.276+07:00  INFO 19236 --- [Web Backend Demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T02:43:36.400+07:00  INFO 19236 --- [Web Backend Demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-29T02:43:36.475+07:00  INFO 19236 --- [Web Backend Demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T02:43:36.926+07:00  INFO 19236 --- [Web Backend Demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T02:43:37.021+07:00  WARN 19236 --- [Web Backend Demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T02:43:37.049+07:00  INFO 19236 --- [Web Backend Demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T02:43:37.845+07:00  INFO 19236 --- [Web Backend Demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T02:43:37.848+07:00  INFO 19236 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T02:43:38.366+07:00  WARN 19236 --- [Web Backend Demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T02:43:38.501+07:00 DEBUG 19236 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-11-29T02:43:38.626+07:00 DEBUG 19236 --- [Web Backend Demo] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-29T02:43:38.662+07:00 DEBUG 19236 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-29T02:43:38.730+07:00 DEBUG 19236 --- [Web Backend Demo] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-29T02:43:38.914+07:00  INFO 19236 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-29T02:43:38.923+07:00  INFO 19236 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Started WebBackendDemoApplication in 5.307 seconds (process running for 5.691)
+2025-11-29T02:50:00.499+07:00  INFO 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-29T02:50:00.500+07:00  INFO 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-29T02:50:00.501+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-11-29T02:50:00.502+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-11-29T02:50:00.502+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-11-29T02:50:00.504+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@c555e1e
+2025-11-29T02:50:00.505+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@19d3f4fb
+2025-11-29T02:50:00.506+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-29T02:50:00.506+07:00  INFO 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-11-29T02:50:00.523+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T02:50:00.547+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T02:50:00.704+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T02:50:00.707+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@1c7ed3c1]
+2025-11-29T02:50:00.727+07:00 DEBUG 19236 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T02:52:43.668+07:00  INFO 17940 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Starting WebBackendDemoApplication using Java 21.0.9 with PID 17940 (C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java\backend\spring_java_backend\target\classes started by ADMIN in C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java)
+2025-11-29T02:52:43.670+07:00  INFO 17940 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T02:52:44.428+07:00  INFO 17940 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T02:52:44.521+07:00  INFO 17940 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2025-11-29T02:52:45.183+07:00  INFO 17940 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-29T02:52:45.204+07:00  INFO 17940 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-29T02:52:45.205+07:00  INFO 17940 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-29T02:52:45.270+07:00  INFO 17940 --- [Web Backend Demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-29T02:52:45.270+07:00  INFO 17940 --- [Web Backend Demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1556 ms
+2025-11-29T02:52:45.468+07:00  INFO 17940 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T02:52:45.794+07:00  INFO 17940 --- [Web Backend Demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: c27ca551-9694-4bdb-8a16-ad4637c9b239
+2025-11-29T02:52:45.796+07:00  INFO 17940 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T02:52:45.952+07:00  INFO 17940 --- [Web Backend Demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T02:52:46.070+07:00  INFO 17940 --- [Web Backend Demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-29T02:52:46.150+07:00  INFO 17940 --- [Web Backend Demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T02:52:46.613+07:00  INFO 17940 --- [Web Backend Demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T02:52:46.707+07:00  WARN 17940 --- [Web Backend Demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T02:52:46.733+07:00  INFO 17940 --- [Web Backend Demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T02:52:47.509+07:00  INFO 17940 --- [Web Backend Demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T02:52:47.511+07:00  INFO 17940 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T02:52:47.858+07:00  WARN 17940 --- [Web Backend Demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T02:52:47.963+07:00 DEBUG 17940 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-11-29T02:52:48.070+07:00 DEBUG 17940 --- [Web Backend Demo] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-29T02:52:48.099+07:00 DEBUG 17940 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-29T02:52:48.157+07:00 DEBUG 17940 --- [Web Backend Demo] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-29T02:52:48.349+07:00  INFO 17940 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-29T02:52:48.359+07:00  INFO 17940 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Started WebBackendDemoApplication in 5.151 seconds (process running for 5.488)
+2025-11-29T02:54:05.889+07:00  INFO 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-29T02:54:05.889+07:00  INFO 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-29T02:54:05.890+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-11-29T02:54:05.890+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-11-29T02:54:05.891+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-11-29T02:54:05.893+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@43cf97a8
+2025-11-29T02:54:05.893+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@80b6098
+2025-11-29T02:54:05.895+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-29T02:54:05.895+07:00  INFO 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-11-29T02:54:05.915+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T02:54:05.941+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T02:54:06.067+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T02:54:06.069+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@53ac8e32]
+2025-11-29T02:54:06.087+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T02:54:17.113+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T02:54:17.114+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T02:54:17.117+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T02:54:17.118+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@59fbd625]
+2025-11-29T02:54:17.120+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:09:34.946+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T03:09:34.946+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:09:34.960+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:09:34.960+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@561f01d8]
+2025-11-29T03:09:34.966+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:11:35.075+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T03:11:35.075+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:11:35.082+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:11:35.082+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@573e5d7a]
+2025-11-29T03:11:35.082+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:16:24.826+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T03:16:24.827+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:16:24.841+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:16:24.842+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@2a2cec2b]
+2025-11-29T03:16:24.843+07:00 DEBUG 17940 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:27:41.460+07:00  INFO 17940 --- [Web Backend Demo] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-29T03:27:41.468+07:00  INFO 17940 --- [Web Backend Demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-29T03:27:41.471+07:00  INFO 17940 --- [Web Backend Demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T03:27:41.473+07:00  INFO 17940 --- [Web Backend Demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-29T03:27:41.476+07:00  INFO 17940 --- [Web Backend Demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-29T03:30:59.136+07:00  INFO 14208 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Starting WebBackendDemoApplication using Java 21.0.9 with PID 14208 (C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java\backend\spring_java_backend\target\classes started by ADMIN in C:\Users\ADMIN\OneDrive\Desktop\college\Learning\IT\file_learning\Java\doan\Java)
+2025-11-29T03:30:59.140+07:00  INFO 14208 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-29T03:30:59.905+07:00  INFO 14208 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-29T03:30:59.973+07:00  INFO 14208 --- [Web Backend Demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2025-11-29T03:31:00.596+07:00  INFO 14208 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-29T03:31:00.616+07:00  INFO 14208 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-29T03:31:00.616+07:00  INFO 14208 --- [Web Backend Demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-29T03:31:00.687+07:00  INFO 14208 --- [Web Backend Demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-29T03:31:00.688+07:00  INFO 14208 --- [Web Backend Demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1504 ms
+2025-11-29T03:31:00.911+07:00  INFO 14208 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-29T03:31:01.329+07:00  INFO 14208 --- [Web Backend Demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: dda7f9a9-b257-4c57-83e8-536e02f78da7
+2025-11-29T03:31:01.333+07:00  INFO 14208 --- [Web Backend Demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-29T03:31:01.478+07:00  INFO 14208 --- [Web Backend Demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-29T03:31:01.599+07:00  INFO 14208 --- [Web Backend Demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-29T03:31:01.682+07:00  INFO 14208 --- [Web Backend Demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-29T03:31:02.148+07:00  INFO 14208 --- [Web Backend Demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-29T03:31:02.274+07:00  WARN 14208 --- [Web Backend Demo] [main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-29T03:31:02.298+07:00  INFO 14208 --- [Web Backend Demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-29T03:31:03.003+07:00  INFO 14208 --- [Web Backend Demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-29T03:31:03.006+07:00  INFO 14208 --- [Web Backend Demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T03:31:03.106+07:00  WARN 14208 --- [Web Backend Demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-29T03:31:03.253+07:00 DEBUG 14208 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-11-29T03:31:03.412+07:00 DEBUG 14208 --- [Web Backend Demo] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-29T03:31:03.452+07:00 DEBUG 14208 --- [Web Backend Demo] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-29T03:31:03.504+07:00 DEBUG 14208 --- [Web Backend Demo] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-29T03:31:03.916+07:00  INFO 14208 --- [Web Backend Demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-29T03:31:03.925+07:00  INFO 14208 --- [Web Backend Demo] [main] u.ie303.demo.WebBackendDemoApplication   : Started WebBackendDemoApplication in 5.282 seconds (process running for 5.666)
+2025-11-29T03:31:18.731+07:00  INFO 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-29T03:31:18.731+07:00  INFO 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-29T03:31:18.733+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-11-29T03:31:18.733+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-11-29T03:31:18.734+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-11-29T03:31:18.735+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@77972964
+2025-11-29T03:31:18.736+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4bcf08ae
+2025-11-29T03:31:18.737+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-29T03:31:18.738+07:00  INFO 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-11-29T03:31:18.756+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/feedback/all", parameters={}
+2025-11-29T03:31:18.772+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.FeedbackController#getAll()
+2025-11-29T03:31:18.868+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:31:18.871+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[uit.ie303.demo.model.FeedbackDTO@451b4c26, uit.ie303.demo.model.FeedbackDTO@6b65bfca, uit.ie303.dem (truncated)...]
+2025-11-29T03:31:18.916+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:31:31.796+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T03:31:31.796+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:31:31.843+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:31:31.844+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@4cd4dceb]
+2025-11-29T03:31:31.844+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:34:36.917+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/reservation/search", parameters={}
+2025-11-29T03:34:36.917+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.TestController#searchReservation(ReservationRequest)
+2025-11-29T03:34:36.920+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:34:36.923+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/reservation/search", parameters={}
+2025-11-29T03:34:36.923+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.TestController#searchReservation(ReservationRequest)
+2025-11-29T03:34:36.974+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ReservationRequest{checkIn='2025-11-29', checkOut='2025-11-30', rooms='3', adults=1, children=0}]
+2025-11-29T03:34:37.016+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:34:37.016+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[uit.ie303.demo.model.RoomDTO@1665024a, uit.ie303.demo.model.RoomDTO@6ed8bd23, uit.ie303.demo.model. (truncated)...]
+2025-11-29T03:34:37.020+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:34:44.963+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/hotel/info", parameters={}
+2025-11-29T03:34:44.963+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.HotelInfoController#getHotelInfo()
+2025-11-29T03:34:44.963+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:34:44.963+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{address=Han Thuyen Street, Thu Duc Ward, HCMC, name=Diamond Land Hotel, location={lng=106.772, lat= (truncated)...]
+2025-11-29T03:34:44.980+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:34:55.168+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/feedback/all", parameters={}
+2025-11-29T03:34:55.168+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.FeedbackController#getAll()
+2025-11-29T03:34:55.197+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:34:55.198+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[uit.ie303.demo.model.FeedbackDTO@6fb16bac, uit.ie303.demo.model.FeedbackDTO@2ab3e83e, uit.ie303.dem (truncated)...]
+2025-11-29T03:34:55.200+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:35:30.034+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764333032911-343", parameters={}
+2025-11-29T03:35:30.034+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:35:30.047+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:35:30.047+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@c635dfd]
+2025-11-29T03:35:30.050+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:35:42.803+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/reservation/search", parameters={}
+2025-11-29T03:35:42.803+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.TestController#searchReservation(ReservationRequest)
+2025-11-29T03:35:42.807+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ReservationRequest{checkIn='2025-11-29', checkOut='2025-11-30', rooms='1', adults=1, children=0}]
+2025-11-29T03:35:42.834+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:35:42.835+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[uit.ie303.demo.model.RoomDTO@3e15795a, uit.ie303.demo.model.RoomDTO@3a2aea40, uit.ie303.demo.model. (truncated)...]
+2025-11-29T03:35:42.837+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:35:58.953+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/reservation/save", parameters={}
+2025-11-29T03:35:58.953+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.ReservationController#saveReservation(ReservationDTO)
+2025-11-29T03:35:58.955+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:35:58.958+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/reservation/save", parameters={}
+2025-11-29T03:35:58.959+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.ReservationController#saveReservation(ReservationDTO)
+2025-11-29T03:35:58.975+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ReservationDTO{bookingId='BKG-1764362158948-727', checkIn='29/11/2025', checkOut='30/11/2025', total (truncated)...]
+2025-11-29T03:35:59.025+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:35:59.025+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [BookingResponse[status=success, message=Đặt phòng thành công! Vui lòng kiểm tra email để xem thông t (truncated)...]
+2025-11-29T03:35:59.025+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:35:59.032+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/email/send?to=nguyenhohoangson1005@gmail.com&subject=Reservation%20Confirmed&text=Your%20reservation%20(ID%3A%20BKG-1764362158948-727)%20for%20President%20Suite%20from%2029%2F11%2F2025%20to%2030%2F11%2F2025%20has%20been%20confirmed.", parameters={masked}
+2025-11-29T03:35:59.032+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.EmailController#sendEmail(String, String, String)
+2025-11-29T03:36:04.084+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-11-29T03:36:04.084+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Email sent successfully!"]
+2025-11-29T03:36:04.087+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:36:57.233+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/booking/BKG-1764362158948-727", parameters={}
+2025-11-29T03:36:57.233+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uit.ie303.demo.controller.BookingLookupController#getBooking(String)
+2025-11-29T03:36:57.255+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-11-29T03:36:57.256+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [uit.ie303.demo.model.BookingLookupDTO@347ed6de]
+2025-11-29T03:36:57.257+07:00 DEBUG 14208 --- [Web Backend Demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-11-29T03:39:05.029+07:00  INFO 14208 --- [Web Backend Demo] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-29T03:39:05.041+07:00  INFO 14208 --- [Web Backend Demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-29T03:39:05.044+07:00  INFO 14208 --- [Web Backend Demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-29T03:39:05.048+07:00  INFO 14208 --- [Web Backend Demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-29T03:39:05.053+07:00  INFO 14208 --- [Web Backend Demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

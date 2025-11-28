@@ -13,7 +13,7 @@ import uit.ie303.demo.service.BookingLookupService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*") // Cho phép frontend gọi (http://localhost:5500 hoặc domain thật)
+@CrossOrigin(origins = "*") 
 public class BookingLookupController {
 
     @Autowired

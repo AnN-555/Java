@@ -7,11 +7,11 @@ public class RoomDTO {
     private int price;
     private String roomView;
     private String image;
-    private LocalDate checkIn;   // thêm trường check-in
+    private LocalDate checkIn;   
     private LocalDate checkOut;
     
 
-    // Constructor đầy đủ
+   
     public RoomDTO(String typeName, int price, String roomView,String image, LocalDate checkIn, LocalDate checkOut) {
         this.typeName = typeName;
         this.price = price;

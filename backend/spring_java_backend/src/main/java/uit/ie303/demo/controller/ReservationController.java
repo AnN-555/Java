@@ -26,18 +26,15 @@ public class ReservationController {
     @PostMapping("/save")
     public ResponseEntity<?> saveReservation(@RequestBody ReservationDTO reservation) {
         System.out.println("Received reservation: " + reservation);
-
-        // Bắt buộc phải có bookingId từ frontend (bạn đã sinh rồi mà)
         if (reservation.getBookingId() == null || reservation.getBookingId().trim().isEmpty()) {
             return ResponseEntity.badRequest()
                     .body(new ErrorResponse("error", "Mã đặt phòng không được để trống!"));
         }
 
         try {
-            // Gọi service → trả về chính bookingId từ frontend (String) nếu thành công
+
             String savedBookingId = reservationService.saveReservationToDb(reservation);
 
-            // Trả về cho frontend mã đẹp + thông báo thành công
             return ResponseEntity.ok(new BookingResponse(
                 "success",
                 "Đặt phòng thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.",
@@ -45,7 +42,6 @@ public class ReservationController {
             ));
 
         } catch (IllegalStateException e) {
-            // Không đủ phòng trống
             return ResponseEntity.badRequest()
                     .body(new ErrorResponse("error", e.getMessage()));
 
@@ -61,6 +57,5 @@ public class ReservationController {
     }
 }
 
-// Record trả về cho frontend (gọn nhẹ, đẹp JSON)
 record BookingResponse(String status, String message, String bookingId) {}
 record ErrorResponse(String status, String message) {}
