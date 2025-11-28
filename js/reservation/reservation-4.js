@@ -5,18 +5,37 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "./reservation-page-1.html";
     });
   }
-
   if (phaseItems.length > 2) {
     phaseItems[2].addEventListener("click", function () {
       window.location.href = "./reservation-page-2.html";
     });
   }
 
-  const checkinRaw = localStorage.getItem("checkinDate") || "2025-09-26";
-  const checkoutRaw = localStorage.getItem("checkoutDate") || "2025-09-27";
-  const checkinDate = new Date(checkinRaw + "T00:00:00");
-  const checkoutDate = new Date(checkoutRaw + "T00:00:00");
+  // ======= Lấy dữ liệu từ localStorage =======
+  const checkinRaw = localStorage.getItem("checkinDate") || "26/09/2025";
+  const checkoutRaw = localStorage.getItem("checkoutDate") || "27/09/2025";
 
+  // Hàm parse dd/mm/yyyy từ localStorage
+  const parseLocalDate = (dateStr) => {
+    if (!dateStr) return new Date();
+    const parts = dateStr.split('/');
+    return new Date(parts[2], parts[1] - 1, parts[0]); // year, month-1, day
+  };
+
+  const checkinDate = parseLocalDate(checkinRaw);
+  const checkoutDate = parseLocalDate(checkoutRaw);
+
+  const roomName = localStorage.getItem("stay_roomName") || "Deluxe Room";
+  const roomImage =
+    localStorage.getItem("stay_roomImage") ||
+    "../../images/reservation/reservation-page-4/deluxe-room.jpg";
+  const guests = localStorage.getItem("stay_guests") || "1 Room - 2 Guests";
+  const roomId = localStorage.getItem("stay_roomId") || "101";
+  const location =
+    localStorage.getItem("stay_location") ||
+    "Thu Duc Ward, Ho Chi Minh City, Vietnam";
+
+  // ======= Format dates & nights =======
   const formatDate = (date) =>
     date.toLocaleDateString("en-GB", {
       day: "numeric",
@@ -31,30 +50,30 @@ document.addEventListener("DOMContentLoaded", function () {
     checkoutDate
   )} (${nights} Night${nights > 1 ? "s" : ""})`;
 
-  const location =
-    localStorage.getItem("stay_location") ||
-    "Thu Duc Ward, Ho Chi Minh City, Vietnam";
-  const datesStored =
-    localStorage.getItem("stay_dates") || "26 Sep 2025 - 27 Sep 2025 (1 Night)";
-  const roomImage =
-    localStorage.getItem("stay_roomImage") ||
-    "../../images/reservation/reservation-page-4/deluxe-room.jpg";
-  const roomName = localStorage.getItem("stay_roomName") || "Deluxe Room";
-  const guests = localStorage.getItem("stay_guests") || "1 Room - 2 Guests";
-  const basePrice = localStorage.getItem("stay_basePrice") || "5,000,000 VND";
-  const tax = localStorage.getItem("stay_tax") || "500,000 VND";
-  const serviceFee = localStorage.getItem("stay_serviceFee") || "250,000 VND";
-  const total = localStorage.getItem("stay_total") || "5,750,000 VND";
-  const roomId = localStorage.getItem("stay_roomId") || "101"; // Lấy ID phòng nếu có
+  // ======= Lấy giá từ localStorage & tính toán =======
+  const priceRaw = localStorage.getItem('stay_price') || '500'; // default $500/đêm
+  const pricePerNight = parseFloat(priceRaw); // convert về số
 
+  // Tính basePrice, tax, serviceFee, total dựa trên nights
+  const basePriceValue = pricePerNight * nights;
+  const taxValue = +(basePriceValue * 0.10).toFixed(2);    // VAT 10%
+  const serviceValue = +(basePriceValue * 0.05).toFixed(2); // Service 5%
+  const totalValue = +(basePriceValue + taxValue + serviceValue).toFixed(2);
+
+  // Format USD
+  const formatUSD = (value) => `$${value.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+
+  const basePrice = formatUSD(basePriceValue);
+  const tax = formatUSD(taxValue);
+  const serviceFee = formatUSD(serviceValue);
+  const total = formatUSD(totalValue);
+
+  // ======= Render lên page =======
   const details = document.querySelectorAll(".stay_box .stay-box-detail");
   if (details[0])
     details[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" alt="" style="height: 20px"> ${location}`;
-
   if (details[1])
-    details[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" alt="" style="height: 20px"> ${
-      datesText || datesStored
-    }`;
+    details[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" alt="" style="height: 20px"> ${datesText}`;
   if (details[2])
     details[2].innerHTML = `<img src="../../images/reservation/reservation-page-4/room.png" alt="" style="height: 20px"> ${roomName}`;
   if (details[3])
@@ -72,6 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
     spans[1].innerHTML = `Taxes & fees<br><small>VAT 10%: ${tax} | Service 5%: ${serviceFee}</small>`;
   if (spans[2]) spans[2].textContent = `Total cost ${total}`;
 
+
+  // ======= Continue button validation + gửi data =======
   const continueBtn = document.querySelector(".continue-btn");
   if (!continueBtn) return;
 
@@ -84,6 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     errorDiv.textContent = "";
     const errors = [];
+
+    // Validate form khách hàng
     const titleChecked = document.querySelector('input[name="title"]:checked');
     if (!titleChecked) errors.push("Please select a title (Mr / Ms / Mrs)");
     const firstName =
@@ -92,9 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const lastName =
       document.querySelector('input[placeholder="Last name"]') ||
       document.querySelectorAll(".input-group input[type=text]")[1];
-
     if (!firstName?.value.trim()) errors.push("Please enter your first name");
     if (!lastName?.value.trim()) errors.push("Please enter your last name");
+
     const phone =
       document.querySelector('input[placeholder="Phone number"]') ||
       document.querySelectorAll('input[type="text"]')[3] ||
@@ -111,13 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkboxEls = document.querySelectorAll(
       ".checkbox-group input[type=checkbox]"
     );
-    const checkbox1 = checkboxEls[0];
-    const checkbox2 = checkboxEls[1];
-    if (!checkbox1?.checked)
+    if (!checkboxEls[0]?.checked)
       errors.push(
         "You must confirm that you will present a valid ID during check-in"
       );
-    if (!checkbox2?.checked)
+    if (!checkboxEls[1]?.checked)
       errors.push("You must agree to the Terms & Conditions");
 
     if (errors.length > 0) {
@@ -126,10 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // ======= Gửi dữ liệu khách hàng + thông tin phòng xuống backend =======
+    // Gửi data khách + thông tin phòng
     const titleText =
       titleChecked.value ||
       (titleChecked.nextElementSibling?.textContent || "").trim();
+
     const selects = document.querySelectorAll(
       ".input-row .input-group select, .input-group select"
     );
@@ -138,14 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
       let found = null;
       selects.forEach((s) => {
         const parentLabel =
-          s
-            .closest(".input-group")
-            ?.querySelector("label")
-            ?.textContent?.toLowerCase() || "";
+          s.closest(".input-group")?.querySelector("label")?.textContent?.toLowerCase() ||
+          "";
         if (parentLabel.includes("country")) found = s;
       });
-      country =
-        (found ? found.value : selects[selects.length - 1].value) || "Vietnam";
+      country = (found ? found.value : selects[selects.length - 1].value) || "Vietnam";
     }
 
     const tempBooking = {
@@ -169,11 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((res) => res.json())
       .then((data) => {
-        // data.tempId được backend trả về
         const tempId = data.tempId;
         if (!tempId) throw new Error("No tempId returned from backend");
-
-        // Chuyển sang trang 3 kèm tempId
+        // Chuyển trang kèm tempId
         window.location.href = `./reservation-page-5.html?tempId=${tempId}`;
       })
       .catch((err) => {
@@ -183,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
+  // ======= Navigation top page =======
   const navTop = document.getElementById("top-page");
   if (navTop) {
     navTop.addEventListener("click", function () {

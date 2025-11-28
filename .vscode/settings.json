@@ -3,5 +3,6 @@
     "java.project.sourcePaths": [
         "backend/src",
         "reservationapp/src/main/java/com/mycompany/reservationapp"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
 }

@@ -4,22 +4,38 @@ document.addEventListener("DOMContentLoaded", function () {
     phaseItems[0].addEventListener("click", function () {
       window.location.href = "./reservation-page-1.html";
     });
-
-    if (phaseItems.length > 2) {
-      phaseItems[2].addEventListener("click", function () {
-        window.location.href = "./reservation-page-2.html";
-      });
-    }
+  }
+  if (phaseItems.length > 2) {
+    phaseItems[2].addEventListener("click", function () {
+      window.location.href = "./reservation-page-2.html";
+    });
   }
 
-  const location =
-    localStorage.getItem("selectedLocation") ||
-    "Thu Duc Ward, Ho Chi Minh City, Vietnam";
-  const checkinRaw = localStorage.getItem("checkinDate") || "2025-09-26";
-  const checkoutRaw = localStorage.getItem("checkoutDate") || "2025-09-27";
-  const checkinDate = new Date(checkinRaw + "T00:00:00");
-  const checkoutDate = new Date(checkoutRaw + "T00:00:00");
+  // ======= Lấy dữ liệu từ localStorage =======
+  const checkinRaw = localStorage.getItem("checkinDate") || "26/09/2025";
+  const checkoutRaw = localStorage.getItem("checkoutDate") || "27/09/2025";
 
+  // Hàm parse dd/mm/yyyy từ localStorage
+  const parseLocalDate = (dateStr) => {
+    if (!dateStr) return new Date();
+    const parts = dateStr.split('/');
+    return new Date(parts[2], parts[1] - 1, parts[0]); // year, month-1, day
+  };
+
+  const checkinDate = parseLocalDate(checkinRaw);
+  const checkoutDate = parseLocalDate(checkoutRaw);
+
+  const roomName = localStorage.getItem("stay_roomName") || "Deluxe Room";
+  const roomImage =
+    localStorage.getItem("stay_roomImage") ||
+    "../../images/reservation/reservation-page-4/deluxe-room.jpg";
+  const guests = localStorage.getItem("stay_guests") || "1 Room - 2 Guests";
+  const roomId = localStorage.getItem("stay_roomId") || "101";
+  const location =
+    localStorage.getItem("stay_location") ||
+    "Thu Duc Ward, Ho Chi Minh City, Vietnam";
+
+  // ======= Format dates & nights =======
   const formatDate = (date) =>
     date.toLocaleDateString("en-GB", {
       day: "numeric",
@@ -34,32 +50,39 @@ document.addEventListener("DOMContentLoaded", function () {
     checkoutDate
   )} (${nights} Night${nights > 1 ? "s" : ""})`;
 
-  const dates =
-    localStorage.getItem("stay_dates") || "26 Sep 2025 - 27 Sep 2025 (1 Night)";
-  const roomImage =
-    localStorage.getItem("stay_roomImage") ||
-    "../../images/reservation/reservation-page-4/deluxe-room.jpg";
-  const roomName = localStorage.getItem("stay_roomName") || "Deluxe Room";
-  const guests = localStorage.getItem("stay_guests") || "1 Room - 2 Guests";
-  const basePrice = localStorage.getItem("stay_basePrice") || "5,000,000 VND";
-  const tax = localStorage.getItem("stay_tax") || "500,000 VND";
-  const serviceFee = localStorage.getItem("stay_serviceFee") || "250,000 VND";
-  const total = localStorage.getItem("stay_total") || "5,750,000 VND";
+  // ======= Lấy giá từ localStorage & tính toán =======
+  const priceRaw = localStorage.getItem('stay_price') || '500'; // default $500/đêm
+  const pricePerNight = parseFloat(priceRaw); // convert về số
 
-  const stayDetails = document.querySelectorAll(".stay_box .stay-box-detail");
-  if (stayDetails[0])
-    stayDetails[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" style="height:20px"> ${location}`;
-  if (stayDetails[1])
-    stayDetails[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" style="height:20px"> ${datesText}`;
-  if (stayDetails[2])
-    stayDetails[2].innerHTML = `<img src="../../images/reservation/reservation-page-4/room.png" style="height:20px"> ${roomName}`;
-  if (stayDetails[3])
-    stayDetails[3].innerHTML = `<img src="../../images/reservation/reservation-page-4/people.png" style="height:20px"> ${guests}`;
+  // Tính basePrice, tax, serviceFee, total dựa trên nights
+  const basePriceValue = pricePerNight * nights;
+  const taxValue = +(basePriceValue * 0.10).toFixed(2);    // VAT 10%
+  const serviceValue = +(basePriceValue * 0.05).toFixed(2); // Service 5%
+  const totalValue = +(basePriceValue + taxValue + serviceValue).toFixed(2);
 
-  const img = document.querySelector(".stay-box-image img");
-  if (img) {
-    img.src = roomImage;
-    img.alt = roomName;
+  // Format USD
+  const formatUSD = (value) => `$${value.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+
+  const basePrice = formatUSD(basePriceValue);
+  const tax = formatUSD(taxValue);
+  const serviceFee = formatUSD(serviceValue);
+  const total = formatUSD(totalValue);
+
+  // ======= Render lên page =======
+  const details = document.querySelectorAll(".stay_box .stay-box-detail");
+  if (details[0])
+    details[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" alt="" style="height: 20px"> ${location}`;
+  if (details[1])
+    details[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" alt="" style="height: 20px"> ${datesText}`;
+  if (details[2])
+    details[2].innerHTML = `<img src="../../images/reservation/reservation-page-4/room.png" alt="" style="height: 20px"> ${roomName}`;
+  if (details[3])
+    details[3].innerHTML = `<img src="../../images/reservation/reservation-page-4/people.png" alt="" style="height: 20px"> ${guests}`;
+
+  const imgEl = document.querySelector(".stay-box-image img");
+  if (imgEl) {
+    imgEl.src = roomImage;
+    imgEl.alt = roomName;
   }
 
   const spans = document.querySelectorAll(".stay_box span");
