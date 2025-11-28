@@ -31,5 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
-
+*.log.*
+*.log
 .env
+
+*/backend/spring_java_backend/.gitignore
+.gitignore
+
+/old/*
