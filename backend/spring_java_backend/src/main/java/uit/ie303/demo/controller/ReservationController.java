@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import uit.ie303.demo.model.ReservationDTO;
-import uit.ie303.demo.service.ReservationService;
+import uit.ie303.demo.service.ReserveService;
 
 @RestController
 @RequestMapping("/api/reservation")
@@ -21,7 +21,7 @@ import uit.ie303.demo.service.ReservationService;
 public class ReservationController {
 
     @Autowired
-    private ReservationService reservationService;
+    private ReserveService reservationService;
 
     @PostMapping("/save")
     public ResponseEntity<?> saveReservation(@RequestBody ReservationDTO reservation) {
