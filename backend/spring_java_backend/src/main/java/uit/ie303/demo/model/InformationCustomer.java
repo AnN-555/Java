@@ -6,7 +6,7 @@ public class InformationCustomer {
     private String checkOut;
     private CustomerDTO customer;
 
-    // getters & setters
+    // getters/setters
     public String getRoomId() { return roomId; }
     public void setRoomId(String roomId) { this.roomId = roomId; }
     public String getCheckIn() { return checkIn; }

@@ -10,8 +10,6 @@ public class RoomDTO {
     private LocalDate checkIn;   
     private LocalDate checkOut;
     
-
-   
     public RoomDTO(String typeName, int price, String roomView,String image, LocalDate checkIn, LocalDate checkOut) {
         this.typeName = typeName;
         this.price = price;
@@ -19,8 +17,6 @@ public class RoomDTO {
         this.image = image;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        
-        
     }
 
     // Getters
@@ -30,7 +26,6 @@ public class RoomDTO {
     public String getImage() { return image; }
     public LocalDate getCheckIn() { return checkIn; }
     public LocalDate getCheckOut() { return checkOut; }
-    
 
     public RoomDTO(String typeName, int price, String roomView,String image) {
         this(typeName, price, roomView, image, null, null);

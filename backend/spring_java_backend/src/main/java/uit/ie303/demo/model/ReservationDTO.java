@@ -1,24 +1,23 @@
 package uit.ie303.demo.model;
 
 public class ReservationDTO {
-    private String bookingId;       // từ frontend, ví dụ BKG-1764327708034-253 (chỉ để hiển thị, không lưu DB)
+    private String bookingId;       // ex BKG-1764327708034-253
     private String checkIn;         // dd/MM/yyyy
     private String checkOut;
-    private String totalGuests;     // ví dụ: "3 Room(s) - 1 Guests"
+    private String totalGuests;
     private double totalPrice;
     private String customerName;
-    private String email;
-    private String phone;           // THÊM DÒNG NÀY (rất quan trọng)
+    private String email;           // check exists later
+    private String phone;           // check exists later
     private String address;
-    private String roomName;        // ví dụ: Deluxe Twin Room
-    private String roomView;        // ví dụ: City View
+    private String roomName;
+    private String roomView;        // no frontend for this yet, consider for upgrading
     private int roomsSelected;
-    private String request;         // special request, có thể null (THÊM DÒNG NÀY)
+    private String request;         // null
 
-    // Constructor mặc định
     public ReservationDTO() {}
 
-    // === GETTER & SETTER ===
+    // getter/setter
     public String getBookingId() { return bookingId; }
     public void setBookingId(String bookingId) { this.bookingId = bookingId; }
 
@@ -40,7 +39,6 @@ public class ReservationDTO {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    // THÊM 2 CÁI NÀY
     public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
 
@@ -56,7 +54,6 @@ public class ReservationDTO {
     public int getRoomsSelected() { return roomsSelected; }
     public void setRoomsSelected(int roomsSelected) { this.roomsSelected = roomsSelected; }
 
-    // THÊM CÁI NÀY
     public String getRequest() { return request; }
     public void setRequest(String request) { this.request = request; }
 

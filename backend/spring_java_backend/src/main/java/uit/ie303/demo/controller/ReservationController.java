@@ -36,9 +36,9 @@ public class ReservationController {
             String savedBookingId = reservationService.saveReservationToDb(reservation);
 
             return ResponseEntity.ok(new BookingResponse(
-                "success",
-                "Đặt phòng thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.",
-                savedBookingId
+                    "success",
+                    "Đặt phòng thành công! Vui lòng kiểm tra email để xem thông tin chi tiết.",
+                    savedBookingId
             ));
 
         } catch (IllegalStateException e) {
@@ -57,5 +57,10 @@ public class ReservationController {
     }
 }
 
-record BookingResponse(String status, String message, String bookingId) {}
-record ErrorResponse(String status, String message) {}
+record BookingResponse(String status, String message, String bookingId) {
+
+}
+
+record ErrorResponse(String status, String message) {
+
+}

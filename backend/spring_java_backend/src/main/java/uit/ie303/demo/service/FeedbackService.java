@@ -19,8 +19,8 @@ public class FeedbackService {
     private static final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=diamondhotel;encrypt=false;trustServerCertificate=true;";
     private static final String DB_USER = "diamondhotel";
     private static final String DB_PASS = "diamond";
-
  
+    //get feedbacks in db and display
     public List<FeedbackDTO> getAllFeedbacks() {
         List<FeedbackDTO> list = new ArrayList<>();
         String sql = "SELECT customer_name, comment, created_at FROM feedback ORDER BY created_at DESC";
@@ -42,7 +42,7 @@ public class FeedbackService {
         return list;
     }
 
-    // THÊM FEEDBACK MỚI
+    // create new feedback
     public void addFeedback(String customerName, String comment) throws Exception {
         if (customerName == null || customerName.trim().isEmpty()) {
             throw new IllegalArgumentException("Vui lòng nhập tên!");

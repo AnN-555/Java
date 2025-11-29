@@ -17,14 +17,13 @@ import uit.ie303.demo.service.RoomService;
 
 @RestController
 @RequestMapping("/api/reservation")
-@CrossOrigin(origins = "*") 
-public class TestController {
-
+@CrossOrigin(origins = "*")
+public class RoomSearchController {
 
     @PostMapping("/search")
     public ResponseEntity<?> searchReservation(@RequestBody ReservationRequest request) {
 
-        // Log dữ liệu nhận được từ frontend
+        // Debug log
         System.out.println("=== RECEIVED RESERVATION REQUEST ===");
         System.out.println("Check-in  : " + request.getCheckIn());
         System.out.println("Check-out : " + request.getCheckOut());
@@ -40,15 +39,11 @@ public class TestController {
         List<RoomDTO> availableRooms = service.getAvailableRooms(checkIn, checkOut);
 
         return ResponseEntity.ok(availableRooms);
-
-       
-}
-
+    }
 
     @GetMapping("/rooms")
     public ResponseEntity<?> getAvailableRooms() {
         RoomService service = new RoomService();
         return ResponseEntity.ok(service.getAvailableRooms());
     }
-
 }

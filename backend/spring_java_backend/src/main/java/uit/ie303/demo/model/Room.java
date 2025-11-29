@@ -1,6 +1,10 @@
 package uit.ie303.demo.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "rooms")
@@ -14,7 +18,7 @@ public class Room {
     private String roomView;
     private String roomStatus;
 
-    // Getters & Setters
+    // Getters/Setters
     public Long getRoomId() { return roomId; }
     public void setRoomId(Long roomId) { this.roomId = roomId; }
     public int getRoomNumber() { return roomNumber; }

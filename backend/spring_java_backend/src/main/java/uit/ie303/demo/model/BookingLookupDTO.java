@@ -3,6 +3,7 @@ package uit.ie303.demo.model;
 import java.time.LocalDate;
 
 public class BookingLookupDTO {
+
     private String id;
     private String fullName;
     private String email;
@@ -13,12 +14,12 @@ public class BookingLookupDTO {
     private String roomType;
     private String roomImage;
 
-  
-    public BookingLookupDTO() {}
+    public BookingLookupDTO() {
+    }
 
     public BookingLookupDTO(String id, String fullName, String email, LocalDate checkIn,
-                            LocalDate checkOut, int nights, double totalAmount,
-                            String roomType, String roomImage) {
+            LocalDate checkOut, int nights, double totalAmount,
+            String roomType, String roomImage) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
@@ -30,31 +31,76 @@ public class BookingLookupDTO {
         this.roomImage = roomImage;
     }
 
+    //getter/setter
+    public String getId() {
+        return id;
+    }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
+    public String getFullName() {
+        return fullName;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    public LocalDate getCheckIn() { return checkIn; }
-    public void setCheckIn(LocalDate checkIn) { this.checkIn = checkIn; }
+    public String getEmail() {
+        return email;
+    }
 
-    public LocalDate getCheckOut() { return checkOut; }
-    public void setCheckOut(LocalDate checkOut) { this.checkOut = checkOut; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public int getNights() { return nights; }
-    public void setNights(int nights) { this.nights = nights; }
+    public LocalDate getCheckIn() {
+        return checkIn;
+    }
 
-    public double getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
+    public void setCheckIn(LocalDate checkIn) {
+        this.checkIn = checkIn;
+    }
 
-    public String getRoomType() { return roomType; }
-    public void setRoomType(String roomType) { this.roomType = roomType; }
+    public LocalDate getCheckOut() {
+        return checkOut;
+    }
 
-    public String getRoomImage() { return roomImage; }
-    public void setRoomImage(String roomImage) { this.roomImage = roomImage; }
+    public void setCheckOut(LocalDate checkOut) {
+        this.checkOut = checkOut;
+    }
+
+    public int getNights() {
+        return nights;
+    }
+
+    public void setNights(int nights) {
+        this.nights = nights;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
+    public String getRoomImage() {
+        return roomImage;
+    }
+
+    public void setRoomImage(String roomImage) {
+        this.roomImage = roomImage;
+    }
 }

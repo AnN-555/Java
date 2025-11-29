@@ -8,7 +8,7 @@ public class ReservationRequest {
     private int adults;
     private int children;
 
-    // ==== GETTERS ====
+    // getter/setter
     public String getCheckIn() {
         return checkIn;
     }
@@ -29,7 +29,6 @@ public class ReservationRequest {
         return children;
     }
 
-    // ==== SETTERS ====
     public void setCheckIn(String checkIn) {
         this.checkIn = checkIn;
     }
@@ -52,12 +51,12 @@ public class ReservationRequest {
 
     @Override
     public String toString() {
-        return "ReservationRequest{" +
-                "checkIn='" + checkIn + '\'' +
-                ", checkOut='" + checkOut + '\'' +
-                ", rooms='" + rooms + '\'' +
-                ", adults=" + adults +
-                ", children=" + children +
-                '}';
+        return "ReservationRequest{"
+                + "checkIn='" + checkIn + '\''
+                + ", checkOut='" + checkOut + '\''
+                + ", rooms='" + rooms + '\''
+                + ", adults=" + adults
+                + ", children=" + children
+                + '}';
     }
 }

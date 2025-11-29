@@ -35,19 +35,19 @@ public class ReservationService {
                 throw new IllegalArgumentException("Booking ID từ frontend không được để trống!");
             }
 
-            // 1. Kiểm tra khách hàng tồn tại chưa (email HOẶC phone)
+            // 1. check customer's existence in db by phone or mail, create new if not
             Integer customerId = findExistingCustomer(conn, dto.getEmail(), dto.getPhone());
             if (customerId == null) {
                 customerId = insertCustomer(conn, dto);
             }
 
-            // 2. Chuyển ngày string → Timestamp (00:00:00)
+            // 2. parse date
             LocalDate checkInDate = LocalDate.parse(dto.getCheckIn(), DTF);
             LocalDate checkOutDate = LocalDate.parse(dto.getCheckOut(), DTF);
             Timestamp checkInTs = Timestamp.valueOf(checkInDate.atStartOfDay());
             Timestamp checkOutTs = Timestamp.valueOf(checkOutDate.atStartOfDay());
 
-            // 3. Tìm phòng trống theo loại + view + số lượng
+            // 3. call findAvailableRooms by type, view, date
             List<Integer> availableRoomIds = findAvailableRooms(conn,
                     dto.getRoomName(), dto.getRoomView(), dto.getRoomsSelected(), checkInTs, checkOutTs);
 
@@ -56,16 +56,14 @@ public class ReservationService {
                         " phòng " + dto.getRoomName() + " - " + dto.getRoomView());
             }
 
+            // 4. Select rooms to book
             List<Integer> roomsToBook = availableRoomIds.subList(0, dto.getRoomsSelected());
 
-            // 4. Insert booking với booking_id từ frontend
+            // 5. Insert booking
             insertBooking(conn, bookingId, customerId, checkInTs, checkOutTs, dto);
 
-            // 5. Insert chi tiết đặt phòng
+            // 6. Insert booking_detail linking booking_id and room
             insertBookingDetails(conn, bookingId, roomsToBook);
-
-            // 6. Cập nhật trạng thái phòng thành Booked
-            updateRoomsToBooked(conn, roomsToBook);
 
             // 7. Insert payment
             insertPayment(conn, bookingId, dto.getTotalPrice());
@@ -82,8 +80,6 @@ public class ReservationService {
             if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
-
-   
 
     private Integer findExistingCustomer(Connection conn, String email, String phone) throws SQLException {
         String sql = "SELECT customer_id FROM customers WHERE email = ? OR phone_number = ?";
@@ -121,7 +117,6 @@ public class ReservationService {
             JOIN roomtype t ON r.type_id = t.type_id
             WHERE t.type_name = ?
               AND r.room_view = ?
-              AND r.room_status = 'Available'
               AND NOT EXISTS (
                 SELECT 1 FROM booking_details bd
                 JOIN booking b ON bd.booking_id = b.booking_id
@@ -146,7 +141,6 @@ public class ReservationService {
         }
         return result;
     }
-
    
     private void insertBooking(Connection conn, String bookingId, int customerId,
                                Timestamp checkIn, Timestamp checkOut, ReservationDTO dto) throws SQLException {
@@ -174,17 +168,6 @@ public class ReservationService {
             for (Integer roomId : roomIds) {
                 ps.setString(1, bookingId);
                 ps.setInt(2, roomId);
-                ps.addBatch();
-            }
-            ps.executeBatch();
-        }
-    }
-
-    private void updateRoomsToBooked(Connection conn, List<Integer> roomIds) throws SQLException {
-        String sql = "UPDATE rooms SET room_status = 'Booked' WHERE room_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            for (Integer id : roomIds) {
-                ps.setInt(1, id);
                 ps.addBatch();
             }
             ps.executeBatch();
