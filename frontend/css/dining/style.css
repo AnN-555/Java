@@ -20,7 +20,7 @@
 html {
     font-family: "Roboto", serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 350;
     color: #212322;
     scroll-behavior: smooth;
 }
@@ -180,7 +180,7 @@ h3 {
 
 .intro p {
     font-size: 1.125rem;
-    font-weight: 300;
+    font-weight: 350;
     color: rgba(0, 0, 0, 0.70);
     width: 52vw;
     text-align: center;
@@ -240,7 +240,7 @@ h3 {
 .dining-text p {
     color: #212322;
     font-size: 1.125rem;
-    font-weight: 300;
+    font-weight: 350;
     font-style: normal;
     margin-bottom: 1.5vw;
     line-height: 1.875rem;
@@ -266,7 +266,7 @@ h3 {
 .dining-text button {
     font-family: 'Old Standard TT', serif;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 550;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,6 +315,7 @@ h3 {
     color: #212322;
     text-decoration: none;
     margin-bottom: 1.6vw;
+    font-weight: 350;
 }
 
 .footer .fa-brands {

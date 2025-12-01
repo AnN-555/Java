@@ -20,7 +20,7 @@
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 350;
     color: #212322;
     scroll-behavior: smooth;
 }
@@ -72,6 +72,7 @@ h2 {
     text-align: center;
     transition: all 0.5s ease;
     white-space: nowrap;
+    font-weight: 350;
 }
 
 /* Đường gạch ẩn ban đầu */
@@ -175,7 +176,7 @@ h2 {
     color: #212322;
     font-size: 1.125rem;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 350;
     line-height: 1.875rem;
 }
 
@@ -233,7 +234,7 @@ h2 {
 
 .footer p {
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 350;
     font-style: normal;
     margin-bottom: 1.6vw;
 }
@@ -244,6 +245,7 @@ h2 {
     color: #212322;
     text-decoration: none;
     margin-bottom: 1.6vw;
+    font-weight: 350;
 }
 
 .footer .fa-brands {

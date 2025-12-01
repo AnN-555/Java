@@ -1,7 +1,7 @@
 /* Banner riêng cho trang Feedback */
 .feedback-banner {
     height: 300px;
-    background-image: url('../../images/homepage/slide/bannerHome1.png'); /* Tận dụng ảnh banner cũ */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../../images/homepage/slide/bannerHome1.png') center/cover no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
 .feedback-banner h1 {
@@ -17,6 +16,15 @@
     font-size: 3rem;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    font-weight: 200;
+}
+
+.feedback-banner p {
+    font-family: "Old Standard TT", serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: 200;
 }
 
 /* Layout chia 2 cột: Trái nhập, Phải xem (hoặc trên dưới tùy màn hình) */

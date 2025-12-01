@@ -6,7 +6,7 @@
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 350;
 }
 
 h1 {
@@ -160,7 +160,7 @@ nav.top-page {
   outline: none;
   padding: 0.4rem 0;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 350;
   width: 100%;
   box-sizing: border-box;
 }
@@ -235,7 +235,7 @@ input:focus {
 
 .stay_box span {
   font-size: clamp(0.5rem, 2vw, 0.75rem);
-  font-weight: 300;
+  font-weight: 350;
   padding-top: 1.5vh;
 }
 

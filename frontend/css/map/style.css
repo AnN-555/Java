@@ -16,7 +16,7 @@
 }
 
 .contact-info h1 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.875rem;
     margin-bottom: 10px;
 }
@@ -25,4 +25,5 @@
     font-size: 1rem;
     line-height: 1.875rem;
     margin-bottom: 10px;
+    font-weight: 350;
 }

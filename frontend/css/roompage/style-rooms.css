@@ -21,7 +21,7 @@
 html {
     font-family: "Roboto", serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 350;
     color: #212322;
     scroll-behavior: smooth;
 }
@@ -73,7 +73,7 @@ h3 {
     color: #212322;
     transition: all 0.5s ease;
     white-space: nowrap;
-    font-weight: 300;
+    font-weight: 350;
 }
 
 .menu-logo img {
@@ -314,21 +314,22 @@ h3 {
 }
 
 .card .btn-book  {
-    font-size: clamp(13px, 0.8vw, 20px);
+    font-size: clamp(13px, 1vw, 20px);
     text-align: center;
     margin: 46px auto;
     text-decoration: none;
-    color: #fff;
-    background-color: #212322;
+    color: #212322;
+    background-color: #9B8D5F;
     padding: 8px 36px;
     border-radius: 5px;
     font-family: roboto;
+    font-weight: bold;
 }
 
 .card .btn-book:hover {
     font-weight: bold;
-    background-color: #9B8D5F;
-    color: #212322;
+    background-color: #212322;
+    color: #fff;
     transition: 0.5s ease;
 }
 
@@ -472,7 +473,7 @@ h3 {
 
 .footer p {
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 350;
     font-style: normal;
     margin-bottom: 1.6vw;
 }
@@ -484,6 +485,7 @@ h3 {
     color: #212322;
     text-decoration: none;
     margin-bottom: 1.6vw;
+    font-weight: 350;
 }
 
 .footer .fa-brands {

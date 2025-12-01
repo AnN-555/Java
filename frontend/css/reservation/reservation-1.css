@@ -20,7 +20,7 @@
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 350;
     color: #212322;
     scroll-behavior: smooth;
 }
@@ -590,7 +590,7 @@ html {
 
 .footer p {
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 350;
     font-style: normal;
     margin-bottom: 1.6vw;
 }

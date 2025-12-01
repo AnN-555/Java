@@ -21,7 +21,7 @@
 html {
     font-family: "Roboto", serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 350;
     color: #212322;
     scroll-behavior: smooth;
 }
@@ -70,7 +70,7 @@ h4 {
     color: #212322;
     transition: all 0.5s ease;
     white-space: nowrap;
-    font-weight: 300;
+    font-weight: 350;
 }
 
 .menu-logo img {
@@ -343,6 +343,7 @@ h4 {
     color: #212322;
     text-decoration: none;
     margin-bottom: 1.6vw;
+    font-weight: 350;
 }
 
 .footer .fa-brands {
